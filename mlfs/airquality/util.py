@@ -27,42 +27,38 @@ def get_historical_weather(city, start_date,  end_date, latitude, longitude):
     # The order of variables in hourly or daily is important to assign them correctly below
     url = "https://archive-api.open-meteo.com/v1/archive"
     params = {
-	    "latitude": 40.4165,
-	    "longitude": -3.7026,
-	    "start_date": "2025-10-26",
-	    "end_date": "2025-11-09",
-	    "daily": ["temperature_2m_mean", "precipitation_sum", "wind_speed_10m_max", "wind_direction_10m_dominant", "daylight_duration", "precipitation_hours"],
+        "latitude": latitude,
+        "longitude": longitude,
+        "start_date": start_date,
+        "end_date": end_date,
+        "daily": ["temperature_2m_mean", "precipitation_sum", "wind_speed_10m_max", "wind_direction_10m_dominant"]
     }
     responses = openmeteo.weather_api(url, params=params)
 
     # Process first location. Add a for-loop for multiple locations or weather models
     response = responses[0]
-    print(f"Coordinates: {response.Latitude()}°N {response.Longitude()}°E")
-    print(f"Elevation: {response.Elevation()} m asl")
-    print(f"Timezone difference to GMT+0: {response.UtcOffsetSeconds()}s")
+    print(f"Coordinates {response.Latitude()}°N {response.Longitude()}°E")
+    print(f"Elevation {response.Elevation()} m asl")
+    print(f"Timezone {response.Timezone()} {response.TimezoneAbbreviation()}")
+    print(f"Timezone difference to GMT+0 {response.UtcOffsetSeconds()} s")
 
-# Process daily data. The order of variables needs to be the same as requested.
+    # Process daily data. The order of variables needs to be the same as requested.
     daily = response.Daily()
     daily_temperature_2m_mean = daily.Variables(0).ValuesAsNumpy()
     daily_precipitation_sum = daily.Variables(1).ValuesAsNumpy()
     daily_wind_speed_10m_max = daily.Variables(2).ValuesAsNumpy()
     daily_wind_direction_10m_dominant = daily.Variables(3).ValuesAsNumpy()
-    daily_daylight_duration = daily.Variables(4).ValuesAsNumpy()
-    daily_precipitation_hours = daily.Variables(5).ValuesAsNumpy()
 
     daily_data = {"date": pd.date_range(
-	    start = pd.to_datetime(daily.Time(), unit = "s", utc = True),
-	    end =  pd.to_datetime(daily.TimeEnd(), unit = "s", utc = True),
-	    freq = pd.Timedelta(seconds = daily.Interval()),
-	    inclusive = "left"
+        start = pd.to_datetime(daily.Time(), unit = "s"),
+        end = pd.to_datetime(daily.TimeEnd(), unit = "s"),
+        freq = pd.Timedelta(seconds = daily.Interval()),
+        inclusive = "left"
     )}
-
     daily_data["temperature_2m_mean"] = daily_temperature_2m_mean
     daily_data["precipitation_sum"] = daily_precipitation_sum
     daily_data["wind_speed_10m_max"] = daily_wind_speed_10m_max
     daily_data["wind_direction_10m_dominant"] = daily_wind_direction_10m_dominant
-    daily_data["daylight_duration"] = daily_daylight_duration
-    daily_data["precipitation_hours"] = daily_precipitation_hours
 
     daily_dataframe = pd.DataFrame(data = daily_data)
     daily_dataframe = daily_dataframe.dropna()
