@@ -31,7 +31,7 @@ def get_historical_weather(city, start_date,  end_date, latitude, longitude):
 	    "longitude": -3.7026,
 	    "start_date": "2025-10-26",
 	    "end_date": "2025-11-09",
-	    "daily": ["temperature_2m_mean", "precipitation_sum", "wind_speed_10m_max", "wind_direction_10m_dominant", "daylight_duration", "precipitation_hours", "sunshine_duration"],
+	    "daily": ["temperature_2m_mean", "precipitation_sum", "wind_speed_10m_max", "wind_direction_10m_dominant", "daylight_duration", "precipitation_hours"],
     }
     responses = openmeteo.weather_api(url, params=params)
 
@@ -49,7 +49,6 @@ def get_historical_weather(city, start_date,  end_date, latitude, longitude):
     daily_wind_direction_10m_dominant = daily.Variables(3).ValuesAsNumpy()
     daily_daylight_duration = daily.Variables(4).ValuesAsNumpy()
     daily_precipitation_hours = daily.Variables(5).ValuesAsNumpy()
-    daily_sunshine_duration = daily.Variables(6).ValuesAsNumpy()
 
     daily_data = {"date": pd.date_range(
 	    start = pd.to_datetime(daily.Time(), unit = "s", utc = True),
@@ -64,7 +63,7 @@ def get_historical_weather(city, start_date,  end_date, latitude, longitude):
     daily_data["wind_direction_10m_dominant"] = daily_wind_direction_10m_dominant
     daily_data["daylight_duration"] = daily_daylight_duration
     daily_data["precipitation_hours"] = daily_precipitation_hours
-    daily_data["sunshine_duration"] = daily_sunshine_duration
+
     daily_dataframe = pd.DataFrame(data = daily_data)
     daily_dataframe = daily_dataframe.dropna()
     daily_dataframe['city'] = city
