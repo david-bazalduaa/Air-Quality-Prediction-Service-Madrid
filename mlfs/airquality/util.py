@@ -20,7 +20,7 @@ def get_historical_weather(city, start_date,  end_date, latitude, longitude):
 
     # Setup the Open-Meteo API client with cache and retry on error
     cache_session = requests_cache.CachedSession('.cache', expire_after = -1)
-    retry_session = retry(cache_session, retries = 5, backoff_factor = 0.2)
+    retry_session = retry(cache_session, retries = 9, backoff_factor = 0.2)
     openmeteo = openmeteo_requests.Client(session = retry_session)
 
     # Make sure all required weather variables are listed here
@@ -48,6 +48,9 @@ def get_historical_weather(city, start_date,  end_date, latitude, longitude):
     daily_precipitation_sum = daily.Variables(1).ValuesAsNumpy()
     daily_wind_speed_10m_max = daily.Variables(2).ValuesAsNumpy()
     daily_wind_direction_10m_dominant = daily.Variables(3).ValuesAsNumpy()
+    daily_daylight_duration = daily.Variables(4).ValuesAsNumpy()
+    daily_precipitation_hours = daily.Variables(5).ValuesAsNumpy()
+    daily_sunshine_duration = daily.Variables(6).ValuesAsNumpy()
 
     daily_data = {"date": pd.date_range(
         start = pd.to_datetime(daily.Time(), unit = "s"),
@@ -59,6 +62,9 @@ def get_historical_weather(city, start_date,  end_date, latitude, longitude):
     daily_data["precipitation_sum"] = daily_precipitation_sum
     daily_data["wind_speed_10m_max"] = daily_wind_speed_10m_max
     daily_data["wind_direction_10m_dominant"] = daily_wind_direction_10m_dominant
+    daily_data["daylight_duration"] = daily_daylight_duration
+    daily_data["precipitation_hours"] = daily_precipitation_hours
+    daily_data["sunshine_duration"] = daily_sunshine_duration
 
     daily_dataframe = pd.DataFrame(data = daily_data)
     daily_dataframe = daily_dataframe.dropna()
