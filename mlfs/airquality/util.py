@@ -31,7 +31,7 @@ def get_historical_weather(city, start_date,  end_date, latitude, longitude):
         "longitude": longitude,
         "start_date": start_date,
         "end_date": end_date,
-        "daily": ["temperature_2m_mean", "precipitation_sum", "wind_speed_10m_max", "wind_direction_10m_dominant", "daylight_duration"]
+        "daily": ["temperature_2m_mean", "precipitation_sum", "wind_speed_10m_max", "wind_direction_10m_dominant", "daylight_duration", "precipitation_hours", "sunshine_duration"],
     }
     responses = openmeteo.weather_api(url, params=params)
 
