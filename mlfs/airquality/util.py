@@ -27,10 +27,10 @@ def get_historical_weather(city, start_date,  end_date, latitude, longitude):
     # The order of variables in hourly or daily is important to assign them correctly below
     url = "https://archive-api.open-meteo.com/v1/archive"
     params = {
-        "latitude": 40.4165,
-        "longitude": -3.7026,
-        "start_date": "2025-10-26",
-        "end_date": "2025-11-09",
+        "latitude": latitude,
+        "longitude": longitude,
+        "start_date": start_date,
+        "end_date": end_date,
         "daily": ["temperature_2m_mean", "precipitation_sum", "wind_speed_10m_max", "wind_direction_10m_dominant", "daylight_duration", "precipitation_hours", "sunshine_duration"],
     }
     responses = openmeteo.weather_api(url, params=params)
@@ -67,6 +67,7 @@ def get_historical_weather(city, start_date,  end_date, latitude, longitude):
     daily_data["sunshine_duration"] = daily_sunshine_duration
 
     daily_dataframe = pd.DataFrame(data = daily_data)
+    daily_dataframe = daily_dataframe.dropna()
     daily_dataframe['city'] = city
     return daily_dataframe
 
