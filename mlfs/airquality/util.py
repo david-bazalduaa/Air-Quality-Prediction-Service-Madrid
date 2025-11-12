@@ -67,7 +67,6 @@ def get_historical_weather(city, start_date,  end_date, latitude, longitude):
     daily_data["sunshine_duration"] = daily_sunshine_duration
 
     daily_dataframe = pd.DataFrame(data = daily_data)
-    daily_dataframe = daily_dataframe.dropna()
     daily_dataframe['city'] = city
     return daily_dataframe
 
