@@ -86,7 +86,7 @@ def get_hourly_weather_forecast(city, latitude, longitude):
     params = {
         "latitude": latitude,
         "longitude": longitude,
-        "hourly": ["temperature_2m", "precipitation", "wind_speed_10m", "wind_direction_10m"]
+        "hourly": ["temperature_2m_mean", "precipitation_sum", "wind_speed_10m_max", "wind_direction_10m_dominant", "daylight_duration", "precipitation_hours", "sunshine_duration"],
     }
     responses = openmeteo.weather_api(url, params=params)
 
@@ -104,6 +104,9 @@ def get_hourly_weather_forecast(city, latitude, longitude):
     hourly_precipitation = hourly.Variables(1).ValuesAsNumpy()
     hourly_wind_speed_10m = hourly.Variables(2).ValuesAsNumpy()
     hourly_wind_direction_10m = hourly.Variables(3).ValuesAsNumpy()
+    hourly_daylight_duration = hourly.Variables(4).ValuesAsNumpy()
+    hourly_precipitation_hours = hourly.Variables(5).ValuesAsNumpy()
+    hourly_sunshine_duration = hourly.Variables(6).ValuesAsNumpy()
 
     hourly_data = {"date": pd.date_range(
         start = pd.to_datetime(hourly.Time(), unit = "s"),
@@ -115,6 +118,9 @@ def get_hourly_weather_forecast(city, latitude, longitude):
     hourly_data["precipitation_sum"] = hourly_precipitation
     hourly_data["wind_speed_10m_max"] = hourly_wind_speed_10m
     hourly_data["wind_direction_10m_dominant"] = hourly_wind_direction_10m
+    hourly_data["daylight_duration"] = hourly_daylight_duration
+    hourly_data["precipitation_hours"] = hourly_precipitation_hours
+    hourly_data["sunshine_duration"] = hourly_sunshine_duration
 
     hourly_dataframe = pd.DataFrame(data = hourly_data)
     hourly_dataframe = hourly_dataframe.dropna()
