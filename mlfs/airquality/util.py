@@ -31,7 +31,7 @@ def get_historical_weather(city, start_date,  end_date, latitude, longitude):
         "longitude": 13.41,
         "start_date": "2025-10-28",
         "end_date": "2025-11-11",
-        "daily": ["temperature_2m_mean", "precipitation_hours", "wind_speed_10m_max", "wind_direction_10m_dominant", "cloud_cover_max", "relative_humidity_2m_mean", "dew_point_2m_max"],
+        "daily": ["temperature_2m_mean", "precipitation_sum", "wind_speed_10m_max", "wind_direction_10m_dominant", "cloud_cover_max", "relative_humidity_2m_mean", "dew_point_2m_max"],
     }
     responses = openmeteo.weather_api(url, params=params)
 
@@ -59,7 +59,7 @@ def get_historical_weather(city, start_date,  end_date, latitude, longitude):
     )}
 
     daily_data["temperature_2m_mean"] = daily_temperature_2m_mean
-    daily_data["precipitation_hours"] = daily_precipitation_hours
+    daily_data["precipitation_sum"] = daily_precipitation_hours
     daily_data["wind_speed_10m_max"] = daily_wind_speed_10m_max
     daily_data["wind_direction_10m_dominant"] = daily_wind_direction_10m_dominant
     daily_data["cloud_cover_max"] = daily_cloud_cover_max
