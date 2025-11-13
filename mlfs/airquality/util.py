@@ -82,7 +82,7 @@ def get_hourly_weather_forecast(city, latitude, longitude):
 
     # Make sure all required weather variables are listed here
     # The order of variables in hourly or daily is important to assign them correctly below
-    url = "https://archive-api.open-meteo.com/v1/archive"
+    url = "https://api.open-meteo.com/v1/ecmwf"
     params = {
         "latitude": 52.52,
         "longitude": 13.41,
