@@ -27,10 +27,10 @@ def get_historical_weather(city, start_date,  end_date, latitude, longitude):
     # The order of variables in hourly or daily is important to assign them correctly below
     url = "https://archive-api.open-meteo.com/v1/archive"
     params = {
-        "latitude": 52.52,
-        "longitude": 13.41,
-        "start_date": "2025-10-28",
-        "end_date": "2025-11-11",
+        "latitude": latitude,
+        "longitude": longitude,
+        "start_date": start_date,
+        "end_date": end_date,
         "daily": ["temperature_2m_mean", "precipitation_sum", "wind_speed_10m_max", "wind_direction_10m_dominant", "cloud_cover_max", "relative_humidity_2m_mean", "dew_point_2m_max"],
     }
     responses = openmeteo.weather_api(url, params=params)
@@ -84,10 +84,8 @@ def get_hourly_weather_forecast(city, latitude, longitude):
     # The order of variables in hourly or daily is important to assign them correctly below
     url = "https://api.open-meteo.com/v1/ecmwf"
     params = {
-        "latitude": 52.52,
-        "longitude": 13.41,
-        "start_date": "2025-10-28",
-        "end_date": "2025-11-11",
+        "latitude": latitude,
+        "longitude": longitude,
         "hourly": ["temperature_2m", "precipitation", "wind_speed_10m", "wind_direction_10m", "cloud_cover", "relative_humidity_2m", "dew_point_2m"],
     }
     responses = openmeteo.weather_api(url, params=params)
