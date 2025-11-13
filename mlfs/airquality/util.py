@@ -88,7 +88,7 @@ def get_hourly_weather_forecast(city, latitude, longitude):
         "longitude": 13.41,
         "start_date": "2025-10-28",
         "end_date": "2025-11-11",
-        "hourly": ["", "temperature_2m", "precipitation", "wind_speed_10m", "wind_direction_10m", "cloud_cover", "relative_humidity_2m", "dew_point_2m"],
+        "hourly": ["temperature_2m", "precipitation", "wind_speed_10m", "wind_direction_10m", "cloud_cover", "relative_humidity_2m", "dew_point_2m"],
     }
     responses = openmeteo.weather_api(url, params=params)
 
@@ -100,14 +100,13 @@ def get_hourly_weather_forecast(city, latitude, longitude):
 
     # Process hourly data. The order of variables needs to be the same as requested.
     hourly = response.Hourly()
-    hourly_ = hourly.Variables(0).ValuesAsNumpy()
-    hourly_temperature_2m = hourly.Variables(1).ValuesAsNumpy()
-    hourly_precipitation = hourly.Variables(2).ValuesAsNumpy()
-    hourly_wind_speed_10m = hourly.Variables(3).ValuesAsNumpy()
-    hourly_wind_direction_10m = hourly.Variables(4).ValuesAsNumpy()
-    hourly_cloud_cover = hourly.Variables(5).ValuesAsNumpy()
-    hourly_relative_humidity_2m = hourly.Variables(6).ValuesAsNumpy()
-    hourly_dew_point_2m = hourly.Variables(7).ValuesAsNumpy()
+    hourly_temperature_2m = hourly.Variables(0).ValuesAsNumpy()
+    hourly_precipitation = hourly.Variables(1).ValuesAsNumpy()
+    hourly_wind_speed_10m = hourly.Variables(2).ValuesAsNumpy()
+    hourly_wind_direction_10m = hourly.Variables(3).ValuesAsNumpy()
+    hourly_cloud_cover = hourly.Variables(4).ValuesAsNumpy()
+    hourly_relative_humidity_2m = hourly.Variables(5).ValuesAsNumpy()
+    hourly_dew_point_2m = hourly.Variables(6).ValuesAsNumpy()
 
     hourly_data = {"date": pd.date_range(
         start = pd.to_datetime(hourly.Time(), unit = "s", utc = True),
@@ -116,7 +115,6 @@ def get_hourly_weather_forecast(city, latitude, longitude):
         inclusive = "left"
     )}
 
-    hourly_data[""] = hourly_
     hourly_data["temperature_2m"] = hourly_temperature_2m
     hourly_data["precipitation"] = hourly_precipitation
     hourly_data["wind_speed_10m"] = hourly_wind_speed_10m
