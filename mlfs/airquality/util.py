@@ -113,13 +113,13 @@ def get_hourly_weather_forecast(city, latitude, longitude):
         inclusive = "left"
     )}
 
-    hourly_data["temperature_2m"] = hourly_temperature_2m
-    hourly_data["precipitation"] = hourly_precipitation
-    hourly_data["wind_speed_10m"] = hourly_wind_speed_10m
-    hourly_data["wind_direction_10m"] = hourly_wind_direction_10m
-    hourly_data["cloud_cover"] = hourly_cloud_cover
-    hourly_data["relative_humidity_2m"] = hourly_relative_humidity_2m
-    hourly_data["dew_point_2m"] = hourly_dew_point_2m
+    hourly_data["temperature_2m_mean"] = hourly_temperature_2m
+    hourly_data["precipitation_sum"] = hourly_precipitation
+    hourly_data["wind_speed_10m_max"] = hourly_wind_speed_10m
+    hourly_data["wind_direction_10m_dominant"] = hourly_wind_direction_10m
+    hourly_data["cloud_cover_max"] = hourly_cloud_cover
+    hourly_data["relative_humidity_2m_mean"] = hourly_relative_humidity_2m
+    hourly_data["dew_point_2m_max"] = hourly_dew_point_2m
 
     hourly_dataframe = pd.DataFrame(data = hourly_data)
     hourly_dataframe = hourly_dataframe.dropna()
