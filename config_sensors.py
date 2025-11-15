@@ -7,6 +7,8 @@ SENSORS_MADRID = [
         "street": "casa-de-campo",
         "latitude": 40.420,     
         "longitude": -3.753,    
+        "url": "https://api.waqi.info/feed/@3228"
+
     },
     {
         "sensor_id": "castellana",
@@ -16,6 +18,7 @@ SENSORS_MADRID = [
         "street": "castellana",
         "latitude": 40.447,
         "longitude": -3.690,
+        "url": "https://api.waqi.info/feed/@3231"
     },
     {
         "sensor_id": "cuatro_caminos",
@@ -25,6 +28,7 @@ SENSORS_MADRID = [
         "street": "cuatro-caminos",
         "latitude": 40.446,
         "longitude": -3.703,
+        "url": "https://api.waqi.info/feed/@3229"
     },
     {
         "sensor_id": "escuelas_aguirre",
@@ -34,6 +38,7 @@ SENSORS_MADRID = [
         "street": "escuelas-aguirre",
         "latitude": 40.421,
         "longitude": -3.676,
+        "url": "https://api.waqi.info/feed/@3227"
     },
     {
         "sensor_id": "fernandez_ladreda",
@@ -43,6 +48,7 @@ SENSORS_MADRID = [
         "street": "fernandez-ladreda",
         "latitude": 40.385,
         "longitude": -3.740,
+        "url": "https://api.waqi.info/feed/@10529"
     },
     {
         "sensor_id": "mendez_alvaro",
@@ -52,6 +58,7 @@ SENSORS_MADRID = [
         "street": "mendez-alvaro",
         "latitude": 40.398,
         "longitude": -3.686,
+        "url": "https://api.waqi.info/feed/@3230"
     },
     {
         "sensor_id": "plaza_castilla",
@@ -61,5 +68,6 @@ SENSORS_MADRID = [
         "street": "plaza-de-castilla",
         "latitude": 40.466,
         "longitude": -3.689,
+        "url": "https://api.waqi.info/feed/@3232"
     },
 ]
