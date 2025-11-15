@@ -55,7 +55,7 @@ SENSORS_MADRID = [
     },
     {
         "sensor_id": "plaza_castilla",
-        "csv_file": "plaza_de_castilla-air-quality.csv",
+        "csv_file": "plaza-de-castilla-air-quality.csv",
         "city": "madrid",
         "country": "spain",
         "street": "plaza-de-castilla",
