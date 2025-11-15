@@ -1,7 +1,7 @@
 SENSORS_MADRID = [
     {
         "sensor_id": "casa_de_campo",
-        "csv_file": "casa-de campo-air-quality.csv",
+        "csv_file": "casa-de-campo-air-quality.csv",
         "city": "madrid",
         "country": "spain",
         "street": "casa-de-campo",
