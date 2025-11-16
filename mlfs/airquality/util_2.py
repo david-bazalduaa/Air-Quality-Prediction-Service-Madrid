@@ -14,6 +14,7 @@ from retry_requests import retry
 import hopsworks
 import hsfs
 from pathlib import Path
+from typing import List
 
 def get_historical_weather_2(city, start_date, end_date, latitude, longitude):
     cache_session = requests_cache.CachedSession('.cache', expire_after=-1)
