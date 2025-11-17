@@ -11,21 +11,21 @@
       font-family: system-ui, -apple-system, Segoe UI, sans-serif;
       margin: 0;
       background: #f5f7fb;
-      color: #222;
+      color: #111827;
     }
     header {
-      background: #1f2933;
+      background: #111827;
       color: white;
-      padding: 1.5rem 2rem;
+      padding: 1rem 2rem;
+      font-size: 0.9rem;
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.7rem;
+    header span {
+      opacity: 0.9;
     }
     main {
       max-width: 1200px;
-      margin: auto;
-      padding: 2rem 1.5rem;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
     }
     .cards {
       display: grid;
@@ -35,29 +35,37 @@
     }
     .card {
       background: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 1.2rem 1.4rem;
+      box-shadow: 0 10px 30px rgba(15,23,42,0.06);
     }
     .card-title {
       font-size: 0.9rem;
-      color: #555;
-      margin: 0;
+      color: #6b7280;
+      margin: 0 0 0.25rem 0;
     }
     .card-value {
-      font-size: 1.5rem;
-      margin-top: 0.4rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin: 0;
     }
     .card-sub {
       font-size: 0.8rem;
-      color: #777;
+      color: #9ca3af;
+      margin-top: 0.1rem;
     }
     .box {
       background: white;
-      padding: 1rem;
+      border-radius: 16px;
+      padding: 1.2rem;
+      box-shadow: 0 10px 30px rgba(15,23,42,0.06);
       margin-bottom: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .box h2 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+      color: #111827;
+      text-align: center;
     }
     table {
       width: 100%;
@@ -67,11 +75,12 @@
     }
     th, td {
       padding: 8px 10px;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
     }
     th {
-      background: #f2f2f2;
-      font-weight: bold;
+      background: #f3f4f6;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -79,8 +88,7 @@
 <body>
 
 <header>
-  <h1>Madrid PM2.5 Forecast</h1>
-  <p>Automatically updated daily via GitHub Actions</p>
+  <span>Automatically updated daily via GitHub Actions</span>
 </header>
 
 <main>
@@ -111,67 +119,9 @@
   </section>
 
   <section class="box">
+    <h2>Madrid PM2.5 – Sensors map (today)</h2>
     <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.2.0.min.js" integrity="sha256-iZ2u/oU2wf/vDbl/ChcX93WgbBRSBvUO6N413hDz7xM=" crossorigin="anonymous"></script>                <div id="40302720-1201-4c74-8387-c93b9f1105c6" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("40302720-1201-4c74-8387-c93b9f1105c6")) {                    Plotly.newPlot(                        "40302720-1201-4c74-8387-c93b9f1105c6",                        [{"line":{"width":3},"mode":"lines+markers","name":"Madrid Mean PM2.5","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"27Zt27KeQ0Dbtm2rnbZEQJIkSdKh5URAkiRJ8vfwREC3bdvmDuNCQNu2bQsUT0NA"},"type":"scatter"},{"mode":"lines+markers","name":"Sensor casa_de_campo","visible":"legendonly","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"AAAAoK1pPEAAAADgFAJDQAAAAMBOTTpAAAAAgCBHREAAAACgFwNFQAAAAABIeEFA"},"type":"scatter"},{"mode":"lines+markers","name":"Sensor castellana","visible":"legendonly","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"AAAAQODgRUAAAABgCotEQAAAAKD3dUZAAAAAQDWHQkAAAADAYGlAQAAAAKBWREdA"},"type":"scatter"},{"mode":"lines+markers","name":"Sensor cuatro_caminos","visible":"legendonly","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"AAAAYBqyREAAAABgdTpJQAAAAIA9NkdAAAAAYPMYSEAAAAAAua1GQAAAACDzL0NA"},"type":"scatter"},{"mode":"lines+markers","name":"Sensor escuelas_aguirre","visible":"legendonly","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"AAAA4FSFPUAAAACAig1DQAAAAOBLjUVAAAAAIJfcREAAAABg2gFBQAAAACC0nkZA"},"type":"scatter"},{"mode":"lines+markers","name":"Sensor fernandez_ladreda","visible":"legendonly","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"AAAAQOpTS0AAAAAAScZIQAAAACC3b0pAAAAAwFwrTEAAAABgyVxLQAAAAEBA+UxA"},"type":"scatter"},{"mode":"lines+markers","name":"Sensor mendez_alvaro","visible":"legendonly","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"AAAAwKGHQ0AAAABgYM0\u002fQAAAAKC+fUJAAAAAgFNtQUAAAAAgNQw6QAAAAEBfkDZA"},"type":"scatter"},{"mode":"lines+markers","name":"Sensor plaza_castilla","visible":"legendonly","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"AAAAINzwQkAAAABgN3xEQAAAAKDO+URAAAAAIDc6QUAAAABA8Ww9QAAAACCtuThA"},"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"title":{"text":"Madrid PM2.5 Forecast (Interactive Dashboard)"},"xaxis":{"title":{"text":"Date"}},"yaxis":{"title":{"text":"PM2.5 (\u00b5g\u002fm\u00b3)"}}},                        {"responsive": true}                    )                };            </script>        </div>
-  </section>
-
-  <section class="box">
-    <h2>Forecast Details (Sensor Level)</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Sensor ID</th>
-          <th>Street</th>
-          <th>PM2.5 (µg/m³)</th>
-          <th>Days Before Forecast</th>
-        </tr>
-      </thead>
-      <tbody>
-<tr><td>2025-11-18</td><td>casa_de_campo</td><td>casa-de-campo</td><td>28.4</td><td>2</td></tr>
-<tr><td>2025-11-18</td><td>castellana</td><td>castellana</td><td>43.8</td><td>4</td></tr>
-<tr><td>2025-11-18</td><td>cuatro_caminos</td><td>cuatro-caminos</td><td>41.4</td><td>2</td></tr>
-<tr><td>2025-11-18</td><td>escuelas_aguirre</td><td>escuelas-aguirre</td><td>29.5</td><td>1</td></tr>
-<tr><td>2025-11-18</td><td>fernandez_ladreda</td><td>fernandez-ladreda</td><td>54.7</td><td>3</td></tr>
-<tr><td>2025-11-18</td><td>mendez_alvaro</td><td>mendez-alvaro</td><td>39.1</td><td>5</td></tr>
-<tr><td>2025-11-18</td><td>plaza_castilla</td><td>plaza-de-castilla</td><td>37.9</td><td>4</td></tr>
-<tr><td>2025-11-19</td><td>casa_de_campo</td><td>casa-de-campo</td><td>38.0</td><td>4</td></tr>
-<tr><td>2025-11-19</td><td>castellana</td><td>castellana</td><td>41.1</td><td>3</td></tr>
-<tr><td>2025-11-19</td><td>cuatro_caminos</td><td>cuatro-caminos</td><td>50.5</td><td>5</td></tr>
-<tr><td>2025-11-19</td><td>escuelas_aguirre</td><td>escuelas-aguirre</td><td>38.1</td><td>3</td></tr>
-<tr><td>2025-11-19</td><td>fernandez_ladreda</td><td>fernandez-ladreda</td><td>49.5</td><td>1</td></tr>
-<tr><td>2025-11-19</td><td>mendez_alvaro</td><td>mendez-alvaro</td><td>31.8</td><td>3</td></tr>
-<tr><td>2025-11-19</td><td>plaza_castilla</td><td>plaza-de-castilla</td><td>41.0</td><td>6</td></tr>
-<tr><td>2025-11-20</td><td>casa_de_campo</td><td>casa-de-campo</td><td>26.3</td><td>1</td></tr>
-<tr><td>2025-11-20</td><td>castellana</td><td>castellana</td><td>44.9</td><td>6</td></tr>
-<tr><td>2025-11-20</td><td>cuatro_caminos</td><td>cuatro-caminos</td><td>46.4</td><td>6</td></tr>
-<tr><td>2025-11-20</td><td>escuelas_aguirre</td><td>escuelas-aguirre</td><td>43.1</td><td>6</td></tr>
-<tr><td>2025-11-20</td><td>fernandez_ladreda</td><td>fernandez-ladreda</td><td>52.9</td><td>2</td></tr>
-<tr><td>2025-11-20</td><td>mendez_alvaro</td><td>mendez-alvaro</td><td>37.0</td><td>6</td></tr>
-<tr><td>2025-11-20</td><td>plaza_castilla</td><td>plaza-de-castilla</td><td>42.0</td><td>5</td></tr>
-<tr><td>2025-11-21</td><td>casa_de_campo</td><td>casa-de-campo</td><td>40.6</td><td>6</td></tr>
-<tr><td>2025-11-21</td><td>castellana</td><td>castellana</td><td>37.1</td><td>2</td></tr>
-<tr><td>2025-11-21</td><td>cuatro_caminos</td><td>cuatro-caminos</td><td>48.2</td><td>4</td></tr>
-<tr><td>2025-11-21</td><td>escuelas_aguirre</td><td>escuelas-aguirre</td><td>41.7</td><td>4</td></tr>
-<tr><td>2025-11-21</td><td>fernandez_ladreda</td><td>fernandez-ladreda</td><td>56.3</td><td>4</td></tr>
-<tr><td>2025-11-21</td><td>mendez_alvaro</td><td>mendez-alvaro</td><td>34.9</td><td>4</td></tr>
-<tr><td>2025-11-21</td><td>plaza_castilla</td><td>plaza-de-castilla</td><td>34.5</td><td>3</td></tr>
-<tr><td>2025-11-22</td><td>casa_de_campo</td><td>casa-de-campo</td><td>42.0</td><td>5</td></tr>
-<tr><td>2025-11-22</td><td>castellana</td><td>castellana</td><td>32.8</td><td>1</td></tr>
-<tr><td>2025-11-22</td><td>cuatro_caminos</td><td>cuatro-caminos</td><td>45.4</td><td>3</td></tr>
-<tr><td>2025-11-22</td><td>escuelas_aguirre</td><td>escuelas-aguirre</td><td>34.0</td><td>2</td></tr>
-<tr><td>2025-11-22</td><td>fernandez_ladreda</td><td>fernandez-ladreda</td><td>54.7</td><td>6</td></tr>
-<tr><td>2025-11-22</td><td>mendez_alvaro</td><td>mendez-alvaro</td><td>26.0</td><td>2</td></tr>
-<tr><td>2025-11-22</td><td>plaza_castilla</td><td>plaza-de-castilla</td><td>29.4</td><td>2</td></tr>
-<tr><td>2025-11-23</td><td>casa_de_campo</td><td>casa-de-campo</td><td>34.9</td><td>3</td></tr>
-<tr><td>2025-11-23</td><td>castellana</td><td>castellana</td><td>46.5</td><td>5</td></tr>
-<tr><td>2025-11-23</td><td>cuatro_caminos</td><td>cuatro-caminos</td><td>38.4</td><td>1</td></tr>
-<tr><td>2025-11-23</td><td>escuelas_aguirre</td><td>escuelas-aguirre</td><td>45.2</td><td>5</td></tr>
-<tr><td>2025-11-23</td><td>fernandez_ladreda</td><td>fernandez-ladreda</td><td>57.9</td><td>5</td></tr>
-<tr><td>2025-11-23</td><td>mendez_alvaro</td><td>mendez-alvaro</td><td>22.6</td><td>1</td></tr>
-<tr><td>2025-11-23</td><td>plaza_castilla</td><td>plaza-de-castilla</td><td>24.7</td><td>1</td></tr>
-      </tbody>
-    </table>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.2.0.min.js" integrity="sha256-iZ2u/oU2wf/vDbl/ChcX93WgbBRSBvUO6N413hDz7xM=" crossorigin="anonymous"></script>                <div id="63c67a7f-96d1-4c53-9f36-7be43035641f" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("63c67a7f-96d1-4c53-9f36-7be43035641f")) {                    Plotly.newPlot(                        "63c67a7f-96d1-4c53-9f36-7be43035641f",                        [{"hoverinfo":"text","lat":{"dtype":"f8","bdata":"z\u002fdT46U7REDhehSuRzFEQPCnxks3OURAbef7qfEyREAMAiuHFjlEQNnO91PjNURA9ihcj8I1REA="},"lon":{"dtype":"f8","bdata":"UI2XbhKDDcDsUbgehesNwIXrUbgehQ3AsHJoke18DcA5tMh2vp8NwJzEILByaA3AoBov3SQGDsA="},"marker":{"cmax":54.65558624267578,"cmin":28.412805557250977,"color":{"dtype":"f8","bdata":"AAAAINzwQkAAAABA6lNLQAAAAEDg4EVAAAAAwKGHQ0AAAABgGrJEQAAAAOBUhT1AAAAAoK1pPEA="},"colorbar":{"title":{"text":"PM2.5 \u00b5g\u002fm\u00b3"}},"colorscale":[[0.0,"rgb(255,255,204)"],[0.125,"rgb(255,237,160)"],[0.25,"rgb(254,217,118)"],[0.375,"rgb(254,178,76)"],[0.5,"rgb(253,141,60)"],[0.625,"rgb(252,78,42)"],[0.75,"rgb(227,26,28)"],[0.875,"rgb(189,0,38)"],[1.0,"rgb(128,0,38)"]],"size":18},"mode":"markers","text":["\u003cb\u003eplaza-de-castilla\u003c\u002fb\u003e\u003cbr\u003eSensor: plaza_castilla\u003cbr\u003ePM2.5: 37.9 \u00b5g\u002fm\u00b3","\u003cb\u003efernandez-ladreda\u003c\u002fb\u003e\u003cbr\u003eSensor: fernandez_ladreda\u003cbr\u003ePM2.5: 54.7 \u00b5g\u002fm\u00b3","\u003cb\u003ecastellana\u003c\u002fb\u003e\u003cbr\u003eSensor: castellana\u003cbr\u003ePM2.5: 43.8 \u00b5g\u002fm\u00b3","\u003cb\u003emendez-alvaro\u003c\u002fb\u003e\u003cbr\u003eSensor: mendez_alvaro\u003cbr\u003ePM2.5: 39.1 \u00b5g\u002fm\u00b3","\u003cb\u003ecuatro-caminos\u003c\u002fb\u003e\u003cbr\u003eSensor: cuatro_caminos\u003cbr\u003ePM2.5: 41.4 \u00b5g\u002fm\u00b3","\u003cb\u003eescuelas-aguirre\u003c\u002fb\u003e\u003cbr\u003eSensor: escuelas_aguirre\u003cbr\u003ePM2.5: 29.5 \u00b5g\u002fm\u00b3","\u003cb\u003ecasa-de-campo\u003c\u002fb\u003e\u003cbr\u003eSensor: casa_de_campo\u003cbr\u003ePM2.5: 28.4 \u00b5g\u002fm\u00b3"],"type":"scattermapbox"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"mapbox":{"center":{"lat":40.42614285714286,"lon":-3.705285714285714},"style":"open-street-map","zoom":11},"margin":{"l":0,"r":0,"t":40,"b":0},"title":{"text":"Madrid PM2.5 \u2013 Sensors map (2025-11-18)"}},                        {"responsive": true}                    )                };            </script>        </div>
   </section>
 
 </main>
