@@ -14,6 +14,7 @@ from retry_requests import retry
 import hopsworks
 import hsfs
 from pathlib import Path
+from typing import List
 
 def get_historical_weather_2(city, start_date, end_date, latitude, longitude):
     cache_session = requests_cache.CachedSession('.cache', expire_after=-1)
@@ -312,3 +313,21 @@ def backfill_predictions_for_monitoring(weather_fg, air_quality_df, monitor_fg, 
     df = df.drop('pm25', axis=1)
     monitor_fg.insert(df, write_options={"wait_for_job": True})
     return hindcast_df
+
+def add_lags_and_rolling(df: pd.DataFrame,
+                         group_cols: List[str] = ['country','city','street'],
+                         date_col: str = 'date',
+                         target: str = 'pm25',
+                         lags: List[int] = [1,2,3],
+                         rolling_windows: List[int] = [3]) -> pd.DataFrame:
+    df = df.copy()
+    df[date_col] = pd.to_datetime(df[date_col])
+    df = df.sort_values(group_cols + [date_col])
+    def _make(g):
+        for lag in lags:
+            g[f"{target}_lag{lag}"] = g[target].shift(lag)
+        for w in rolling_windows:
+            g[f"{target}_roll{w}"] = g[target].rolling(window=w, min_periods=1).mean()
+        return g
+    df = df.groupby(group_cols, group_keys=False).apply(_make)
+    return df
