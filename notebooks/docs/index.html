@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Madrid Air Quality Forecast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+      margin: 0;
+      background: #f5f7fb;
+      color: #222;
+    }
+    header {
+      background: #1f2933;
+      color: white;
+      padding: 1.5rem 2rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+    header p {
+      margin: 0.3rem 0 0;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .card-title {
+      color: #4b5563;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    .card-value {
+      font-size: 1.4rem;
+      margin-top: 0.3rem;
+    }
+    .card-sub {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-top: 0.1rem;
+    }
+    .box {
+      background: white;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+    th, td {
+      padding: 0.4rem 0.6rem;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+    }
+    th {
+      background: #f9fafb;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Madrid PM2.5 Forecast</h1>
+  <p>Daily predictions from the ML model, automatically updated by GitHub Actions.</p>
+</header>
+
+<main>
+
+  <section class="cards">
+    <div class="card">
+      <p class="card-title">Today (city mean)</p>
+      <p class="card-value">39.2 µg/m³</p>
+      <p class="card-sub">2025-11-18</p>
+    </div>
+
+    <div class="card">
+          <p class="card-title">Tomorrow (city mean)</p>
+          <p class="card-value">41.4 µg/m³</p>
+          <p class="card-sub">2025-11-19</p>
+        </div>
+
+    <div class="card">
+      <p class="card-title">Period mean</p>
+      <p class="card-value">40.1 µg/m³</p>
+      <p class="card-sub">Average of all forecast days</p>
+    </div>
+
+    <div class="card">
+      <p class="card-title">Highest forecast day</p>
+      <p class="card-value">41.9 µg/m³</p>
+      <p class="card-sub">2025-11-21</p>
+    </div>
+  </section>
+
+  <section class="box">
+    <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.2.0.min.js" integrity="sha256-iZ2u/oU2wf/vDbl/ChcX93WgbBRSBvUO6N413hDz7xM=" crossorigin="anonymous"></script>                <div id="a65651d5-3852-4bad-bf7a-78ce75fa84bd" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("a65651d5-3852-4bad-bf7a-78ce75fa84bd")) {                    Plotly.newPlot(                        "a65651d5-3852-4bad-bf7a-78ce75fa84bd",                        [{"line":{"width":3},"mode":"lines+markers","name":"Madrid mean","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"27Zt27KeQ0Dbtm2rnbZEQJIkSdKh5URAkiRJ8vfwREC3bdvmDuNCQNu2bQsUT0NA"},"type":"scatter"},{"mode":"lines+markers","name":"Sensor casa_de_campo","visible":"legendonly","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"AAAAoK1pPEAAAADgFAJDQAAAAMBOTTpAAAAAgCBHREAAAACgFwNFQAAAAABIeEFA"},"type":"scatter"},{"mode":"lines+markers","name":"Sensor castellana","visible":"legendonly","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"AAAAQODgRUAAAABgCotEQAAAAKD3dUZAAAAAQDWHQkAAAADAYGlAQAAAAKBWREdA"},"type":"scatter"},{"mode":"lines+markers","name":"Sensor cuatro_caminos","visible":"legendonly","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"AAAAYBqyREAAAABgdTpJQAAAAIA9NkdAAAAAYPMYSEAAAAAAua1GQAAAACDzL0NA"},"type":"scatter"},{"mode":"lines+markers","name":"Sensor escuelas_aguirre","visible":"legendonly","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"AAAA4FSFPUAAAACAig1DQAAAAOBLjUVAAAAAIJfcREAAAABg2gFBQAAAACC0nkZA"},"type":"scatter"},{"mode":"lines+markers","name":"Sensor fernandez_ladreda","visible":"legendonly","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"AAAAQOpTS0AAAAAAScZIQAAAACC3b0pAAAAAwFwrTEAAAABgyVxLQAAAAEBA+UxA"},"type":"scatter"},{"mode":"lines+markers","name":"Sensor mendez_alvaro","visible":"legendonly","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"AAAAwKGHQ0AAAABgYM0\u002fQAAAAKC+fUJAAAAAgFNtQUAAAAAgNQw6QAAAAEBfkDZA"},"type":"scatter"},{"mode":"lines+markers","name":"Sensor plaza_castilla","visible":"legendonly","x":["2025-11-18","2025-11-19","2025-11-20","2025-11-21","2025-11-22","2025-11-23"],"y":{"dtype":"f8","bdata":"AAAAINzwQkAAAABgN3xEQAAAAKDO+URAAAAAIDc6QUAAAABA8Ww9QAAAACCtuThA"},"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"title":{"text":"PM2.5 forecast \u2013 Madrid (next days)"},"xaxis":{"title":{"text":"Date"}},"yaxis":{"title":{"text":"PM2.5 (\u00b5g\u002fm\u00b3)"}}},                        {"responsive": true}                    )                };            </script>        </div>
+  </section>
+
+  <section class="box">
+    <h2>Sensor-level forecast details</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Sensor</th>
+          <th>Street</th>
+          <th>PM2.5 (µg/m³)</th>
+          <th>Days before forecast day</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr><td>2025-11-18</td><td>casa_de_campo</td><td>casa-de-campo</td><td>28.4</td><td>2</td></tr>
+<tr><td>2025-11-18</td><td>castellana</td><td>castellana</td><td>43.8</td><td>4</td></tr>
+<tr><td>2025-11-18</td><td>cuatro_caminos</td><td>cuatro-caminos</td><td>41.4</td><td>2</td></tr>
+<tr><td>2025-11-18</td><td>escuelas_aguirre</td><td>escuelas-aguirre</td><td>29.5</td><td>1</td></tr>
+<tr><td>2025-11-18</td><td>fernandez_ladreda</td><td>fernandez-ladreda</td><td>54.7</td><td>3</td></tr>
+<tr><td>2025-11-18</td><td>mendez_alvaro</td><td>mendez-alvaro</td><td>39.1</td><td>5</td></tr>
+<tr><td>2025-11-18</td><td>plaza_castilla</td><td>plaza-de-castilla</td><td>37.9</td><td>4</td></tr>
+<tr><td>2025-11-19</td><td>casa_de_campo</td><td>casa-de-campo</td><td>38.0</td><td>4</td></tr>
+<tr><td>2025-11-19</td><td>castellana</td><td>castellana</td><td>41.1</td><td>3</td></tr>
+<tr><td>2025-11-19</td><td>cuatro_caminos</td><td>cuatro-caminos</td><td>50.5</td><td>5</td></tr>
+<tr><td>2025-11-19</td><td>escuelas_aguirre</td><td>escuelas-aguirre</td><td>38.1</td><td>3</td></tr>
+<tr><td>2025-11-19</td><td>fernandez_ladreda</td><td>fernandez-ladreda</td><td>49.5</td><td>1</td></tr>
+<tr><td>2025-11-19</td><td>mendez_alvaro</td><td>mendez-alvaro</td><td>31.8</td><td>3</td></tr>
+<tr><td>2025-11-19</td><td>plaza_castilla</td><td>plaza-de-castilla</td><td>41.0</td><td>6</td></tr>
+<tr><td>2025-11-20</td><td>casa_de_campo</td><td>casa-de-campo</td><td>26.3</td><td>1</td></tr>
+<tr><td>2025-11-20</td><td>castellana</td><td>castellana</td><td>44.9</td><td>6</td></tr>
+<tr><td>2025-11-20</td><td>cuatro_caminos</td><td>cuatro-caminos</td><td>46.4</td><td>6</td></tr>
+<tr><td>2025-11-20</td><td>escuelas_aguirre</td><td>escuelas-aguirre</td><td>43.1</td><td>6</td></tr>
+<tr><td>2025-11-20</td><td>fernandez_ladreda</td><td>fernandez-ladreda</td><td>52.9</td><td>2</td></tr>
+<tr><td>2025-11-20</td><td>mendez_alvaro</td><td>mendez-alvaro</td><td>37.0</td><td>6</td></tr>
+<tr><td>2025-11-20</td><td>plaza_castilla</td><td>plaza-de-castilla</td><td>42.0</td><td>5</td></tr>
+<tr><td>2025-11-21</td><td>casa_de_campo</td><td>casa-de-campo</td><td>40.6</td><td>6</td></tr>
+<tr><td>2025-11-21</td><td>castellana</td><td>castellana</td><td>37.1</td><td>2</td></tr>
+<tr><td>2025-11-21</td><td>cuatro_caminos</td><td>cuatro-caminos</td><td>48.2</td><td>4</td></tr>
+<tr><td>2025-11-21</td><td>escuelas_aguirre</td><td>escuelas-aguirre</td><td>41.7</td><td>4</td></tr>
+<tr><td>2025-11-21</td><td>fernandez_ladreda</td><td>fernandez-ladreda</td><td>56.3</td><td>4</td></tr>
+<tr><td>2025-11-21</td><td>mendez_alvaro</td><td>mendez-alvaro</td><td>34.9</td><td>4</td></tr>
+<tr><td>2025-11-21</td><td>plaza_castilla</td><td>plaza-de-castilla</td><td>34.5</td><td>3</td></tr>
+<tr><td>2025-11-22</td><td>casa_de_campo</td><td>casa-de-campo</td><td>42.0</td><td>5</td></tr>
+<tr><td>2025-11-22</td><td>castellana</td><td>castellana</td><td>32.8</td><td>1</td></tr>
+<tr><td>2025-11-22</td><td>cuatro_caminos</td><td>cuatro-caminos</td><td>45.4</td><td>3</td></tr>
+<tr><td>2025-11-22</td><td>escuelas_aguirre</td><td>escuelas-aguirre</td><td>34.0</td><td>2</td></tr>
+<tr><td>2025-11-22</td><td>fernandez_ladreda</td><td>fernandez-ladreda</td><td>54.7</td><td>6</td></tr>
+<tr><td>2025-11-22</td><td>mendez_alvaro</td><td>mendez-alvaro</td><td>26.0</td><td>2</td></tr>
+<tr><td>2025-11-22</td><td>plaza_castilla</td><td>plaza-de-castilla</td><td>29.4</td><td>2</td></tr>
+<tr><td>2025-11-23</td><td>casa_de_campo</td><td>casa-de-campo</td><td>34.9</td><td>3</td></tr>
+<tr><td>2025-11-23</td><td>castellana</td><td>castellana</td><td>46.5</td><td>5</td></tr>
+<tr><td>2025-11-23</td><td>cuatro_caminos</td><td>cuatro-caminos</td><td>38.4</td><td>1</td></tr>
+<tr><td>2025-11-23</td><td>escuelas_aguirre</td><td>escuelas-aguirre</td><td>45.2</td><td>5</td></tr>
+<tr><td>2025-11-23</td><td>fernandez_ladreda</td><td>fernandez-ladreda</td><td>57.9</td><td>5</td></tr>
+<tr><td>2025-11-23</td><td>mendez_alvaro</td><td>mendez-alvaro</td><td>22.6</td><td>1</td></tr>
+<tr><td>2025-11-23</td><td>plaza_castilla</td><td>plaza-de-castilla</td><td>24.7</td><td>1</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+</body>
+</html>
