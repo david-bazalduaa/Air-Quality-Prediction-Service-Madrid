@@ -58,7 +58,7 @@ The system is structured into 4 independent Python notebooks, managed through th
 The predictions are visualized on a public dashboard hosted on GitHub Pages. 
 Here is an preview:
 
-![Vista Previa del Dashboard](Dashboard Madrid.png)
+![Vista Previa del Dashboard](dashboard_madrid.png)
 
 
 ---
