@@ -1,9 +1,8 @@
 name: air-quality-daily
 
 on:
-  # para correrlo diario (por ejemplo 06:11 UTC) descomenta esto:
-  #schedule:
-  #  - cron: '11 6 * * *'
+  schedule:
+    - cron: '21 17 * * *'
   workflow_dispatch:
 
 jobs:
