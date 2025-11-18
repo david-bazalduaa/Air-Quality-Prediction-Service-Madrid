@@ -1,0 +1,50 @@
+name: air-quality-daily
+
+on:
+  # para correrlo diario (por ejemplo 06:11 UTC) descomenta esto:
+  #schedule:
+  #  - cron: '11 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  schedule_pipelines:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   
+
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Execute feature & inference notebooks
+        env:
+          HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
+        run: |
+          ipython notebooks/airquality/2_air_quality_feature_pipeline.ipynb
+          ipython notebooks/airquality/4_air_quality_batch_inference.ipynb
+
+      - name: Commit updated dashboard (docs/)
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update Air Quality Dashboard"
+          commit_options: '--no-verify --signoff'
+
+          file_pattern: 'docs/**'
+
+          repository: .
+
+          skip_dirty_check: false   
+          skip_fetch: true
+          skip_checkout: true
