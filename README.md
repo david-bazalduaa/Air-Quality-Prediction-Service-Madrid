@@ -3,11 +3,11 @@
 
 This project implements a scalable, serverless machine learning pipeline to predict air quality ($PM_{2.5}$) for the whole city of Madrid, consisting of 7 different sensors. The system is fully automated using **Hopsworks Feature Store**, **GitHub Actions**, and **XGBoost**.
 
-🔗 **[Click here to view the Live Dashboard](INSERT_YOUR_GITHUB_PAGES_URL_HERE)**
+**[Click here to view the Live Dashboard](https://david-bazalduaa.github.io/Air-Quality-Prediction-Service-Madrid/)**
 
 ---
 
-## 📋 Project Overview
+##  Project Overview
 
 The goal of this project is to predict $PM_{2.5}$ levels for the next 6-7 days. It uses a feature store architecture to manage data, trains an XGBoost model on historical data, then test the model on recent data and finally performs batch inference daily. Addresses the **Grade A** requirement by scaling predictions to a cluster of sensors (Madrid city level) and implementing advanced time-series feature engineering.
 
@@ -19,7 +19,7 @@ The goal of this project is to predict $PM_{2.5}$ levels for the next 6-7 days. 
 
 ---
 
-## 🛠 Pipeline Architecture
+##  Pipeline Architecture
 
 The system is structured into 4 independent Python notebooks, managed through the Hopsworks Feature Store.
 
@@ -53,24 +53,15 @@ The system is structured into 4 independent Python notebooks, managed through th
 
 ---
 
-## 📊 Dashboard
+## Dashboard
 
-The predictions are visualized on a public dashboard hosted on GitHub Pages. It includes:
-1.  **Hindcast Graphs:** Comparing past predictions against actual measurements to monitor accuracy.
-2.  **7-Day Forecast:** Predicted Air Quality levels for all 7 sensors in Madrid.
+The predictions are visualized on a public dashboard hosted on GitHub Pages. 
+Here is an preview:
+
+![Vista Previa del Dashboard](dashboard_madrid.png)
+
 
 ---
-
-## 🚀 How to Run
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
-    ```
-2.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
 3.  **Set up Secrets:**
     Ensure you have your `HOPSWORKS_API_KEY` configured in your environment or GitHub Secrets.
 
