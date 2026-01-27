@@ -16,6 +16,7 @@ import hsfs
 from pathlib import Path
 from typing import List
 
+
 def get_historical_weather_2(city, start_date, end_date, latitude, longitude):
     cache_session = requests_cache.CachedSession('.cache', expire_after=-1)
     retry_session = retry(cache_session, retries=5, backoff_factor=0.2)
@@ -76,14 +77,14 @@ def get_historical_weather_2(city, start_date, end_date, latitude, longitude):
 
     return daily_dataframe
 
-def get_hourly_weather_forecast(city, latitude, longitude):
 
+def get_hourly_weather_forecast(city, latitude, longitude):
     # latitude, longitude = get_city_coordinates(city)
 
     # Setup the Open-Meteo API client with cache and retry on error
-    cache_session = requests_cache.CachedSession('.cache', expire_after = -1)
-    retry_session = retry(cache_session, retries = 5, backoff_factor = 0.2)
-    openmeteo = openmeteo_requests.Client(session = retry_session)
+    cache_session = requests_cache.CachedSession('.cache', expire_after=-1)
+    retry_session = retry(cache_session, retries=5, backoff_factor=0.2)
+    openmeteo = openmeteo_requests.Client(session=retry_session)
 
     # Make sure all required weather variables are listed here
     # The order of variables in hourly or daily is important to assign them correctly below
@@ -91,7 +92,15 @@ def get_hourly_weather_forecast(city, latitude, longitude):
     params = {
         "latitude": latitude,
         "longitude": longitude,
-        "hourly": ["temperature_2m", "precipitation", "wind_speed_10m", "wind_direction_10m", "cloud_cover", "relative_humidity_2m", "dew_point_2m"],
+        "hourly": [
+            "temperature_2m",
+            "precipitation",
+            "wind_speed_10m",
+            "wind_direction_10m",
+            "cloud_cover",
+            "relative_humidity_2m",
+            "dew_point_2m",
+        ],
     }
     responses = openmeteo.weather_api(url, params=params)
 
@@ -111,12 +120,14 @@ def get_hourly_weather_forecast(city, latitude, longitude):
     hourly_relative_humidity_2m = hourly.Variables(5).ValuesAsNumpy()
     hourly_dew_point_2m = hourly.Variables(6).ValuesAsNumpy()
 
-    hourly_data = {"date": pd.date_range(
-        start = pd.to_datetime(hourly.Time(), unit = "s", utc = True),
-        end =  pd.to_datetime(hourly.TimeEnd(), unit = "s", utc = True),
-        freq = pd.Timedelta(seconds = hourly.Interval()),
-        inclusive = "left"
-    )}
+    hourly_data = {
+        "date": pd.date_range(
+            start=pd.to_datetime(hourly.Time(), unit="s", utc=True),
+            end=pd.to_datetime(hourly.TimeEnd(), unit="s", utc=True),
+            freq=pd.Timedelta(seconds=hourly.Interval()),
+            inclusive="left",
+        )
+    }
 
     hourly_data["temperature_2m_mean"] = hourly_temperature_2m
     hourly_data["precipitation_sum"] = hourly_precipitation
@@ -126,7 +137,7 @@ def get_hourly_weather_forecast(city, latitude, longitude):
     hourly_data["relative_humidity_2m_mean"] = hourly_relative_humidity_2m
     hourly_data["dew_point_2m_max"] = hourly_dew_point_2m
 
-    hourly_dataframe = pd.DataFrame(data = hourly_data)
+    hourly_dataframe = pd.DataFrame(data=hourly_data)
     hourly_dataframe = hourly_dataframe.dropna()
     return hourly_dataframe
 
@@ -144,7 +155,8 @@ def get_city_coordinates(city_name: str):
 
     return latitude, longitude
 
-def trigger_request(url:str):
+
+def trigger_request(url: str):
     response = requests.get(url)
     if response.status_code == 200:
         # Extract the JSON content from the response
@@ -175,7 +187,6 @@ def get_pm25(aqicn_url: str, country: str, city: str, street: str, day: datetime
         url2 = f"https://api.waqi.info/feed/{country}/{city}/{street}/?token={AQI_API_KEY}"
         data = trigger_request(url2)
 
-
     # Check if the API response contains the data
     if data['status'] == 'ok':
         # Extract the air quality data
@@ -191,7 +202,10 @@ def get_pm25(aqicn_url: str, country: str, city: str, street: str, day: datetime
         aq_today_df['date'] = pd.to_datetime(aq_today_df['date'])
         aq_today_df['url'] = aqicn_url
     else:
-        print("Error: There may be an incorrect  URL for your Sensor or it is not contactable right now. The API response does not contain data.  Error message:", data['data'])
+        print(
+            "Error: There may be an incorrect  URL for your Sensor or it is not contactable right now. The API response does not contain data.  Error message:",
+            data['data'],
+        )
         raise requests.exceptions.RequestException(data['data'])
 
     return aq_today_df
@@ -202,7 +216,16 @@ def plot_air_quality_forecast(city: str, street: str, df: pd.DataFrame, file_pat
 
     day = pd.to_datetime(df['date']).dt.date
     # Plot each column separately in matplotlib
-    ax.plot(day, df['predicted_pm25'], label='Predicted PM2.5', color='red', linewidth=2, marker='o', markersize=5, markerfacecolor='blue')
+    ax.plot(
+        day,
+        df['predicted_pm25'],
+        label='Predicted PM2.5',
+        color='red',
+        linewidth=2,
+        marker='o',
+        markersize=5,
+        markerfacecolor='blue',
+    )
 
     # Set the y-axis to a logarithmic scale
     ax.set_yscale('log')
@@ -233,7 +256,16 @@ def plot_air_quality_forecast(city: str, street: str, df: pd.DataFrame, file_pat
     plt.xticks(rotation=45)
 
     if hindcast == True:
-        ax.plot(day, df['pm25'], label='Actual PM2.5', color='black', linewidth=2, marker='^', markersize=5, markerfacecolor='grey')
+        ax.plot(
+            day,
+            df['pm25'],
+            label='Actual PM2.5',
+            color='black',
+            linewidth=2,
+            marker='^',
+            markersize=5,
+            markerfacecolor='grey',
+        )
         legend2 = ax.legend(loc='upper left', fontsize='x-small')
         ax.add_artist(legend1)
 
@@ -253,6 +285,7 @@ def delete_feature_groups(fs, name):
     except hsfs.client.exceptions.RestAPIError:
         print(f"No {name} feature group found")
 
+
 def delete_feature_views(fs, name):
     try:
         for fv in fs.get_feature_views(name):
@@ -260,6 +293,7 @@ def delete_feature_views(fs, name):
             print(f"Deleted {fv.name}/{fv.version}")
     except hsfs.client.exceptions.RestAPIError:
         print(f"No {name} feature view found")
+
 
 def delete_models(mr, name):
     models = mr.get_models(name)
@@ -269,6 +303,7 @@ def delete_models(mr, name):
         model.delete()
         print(f"Deleted model {model.name}/{model.version}")
 
+
 def delete_secrets(proj, name):
     secrets = secrets_api(proj.name)
     try:
@@ -277,6 +312,7 @@ def delete_secrets(proj, name):
         print(f"Deleted secret {name}")
     except hopsworks.client.exceptions.RestAPIError:
         print(f"No {name} secret found")
+
 
 # WARNING - this will wipe out all your feature data and models
 def purge_project(proj):
@@ -295,6 +331,7 @@ def purge_project(proj):
     delete_models(mr, "air_quality_xgboost_model")
     delete_secrets(proj, "SENSOR_LOCATION_JSON")
 
+
 def check_file_path(file_path):
     my_file = Path(file_path)
     if my_file.is_file() == False:
@@ -302,32 +339,67 @@ def check_file_path(file_path):
     else:
         print(f"File successfully found at the path: {file_path}")
 
+
 def backfill_predictions_for_monitoring(weather_fg, air_quality_df, monitor_fg, model):
     features_df = weather_fg.read()
     features_df = features_df.sort_values(by=['date'], ascending=True)
     features_df = features_df.tail(10)
-    features_df['predicted_pm25'] = model.predict(features_df[['weather_madrid_sensors_temperature_2m_mean', 'weather_madrid_sensors_precipitation_sum', 'weather_madrid_sensors_wind_speed_10m_max', 'weather_madrid_sensors_wind_direction_10m_dominant', 'weather_madrid_sensors_cloud_cover_max', 'weather_madrid_sensors_relative_humidity_2m_mean', 'weather_madrid_sensors_dew_point_2m_max']])
-    df = pd.merge(features_df, air_quality_df[['date','pm25','street','country']], on="date")
+    features_df['predicted_pm25'] = model.predict(
+        features_df[
+            [
+                'weather_madrid_sensors_temperature_2m_mean',
+                'weather_madrid_sensors_precipitation_sum',
+                'weather_madrid_sensors_wind_speed_10m_max',
+                'weather_madrid_sensors_wind_direction_10m_dominant',
+                'weather_madrid_sensors_cloud_cover_max',
+                'weather_madrid_sensors_relative_humidity_2m_mean',
+                'weather_madrid_sensors_dew_point_2m_max',
+            ]
+        ]
+    )
+    df = pd.merge(features_df, air_quality_df[['date', 'pm25', 'street', 'country']], on="date")
     df['days_before_forecast_day'] = 1
     hindcast_df = df
     df = df.drop('pm25', axis=1)
     monitor_fg.insert(df, write_options={"wait_for_job": True})
     return hindcast_df
 
-def add_lags_and_rolling(df: pd.DataFrame,
-                         group_cols: List[str] = ['country','city','street'],
-                         date_col: str = 'date',
-                         target: str = 'pm25',
-                         lags: List[int] = [1,2,3],
-                         rolling_windows: List[int] = [3]) -> pd.DataFrame:
+
+def add_lags_and_rolling(
+    df: pd.DataFrame,
+    group_cols: List[str] = ['country', 'city', 'street'],
+    date_col: str = 'date',
+    target: str = 'pm25',
+    lags: List[int] = [1, 2, 3],
+    rolling_windows: List[int] = [3],
+) -> pd.DataFrame:
     df = df.copy()
+
+    # --- FIX PARA PANDAS 2.0+ ---
+    # Si las columnas de agrupación están en el índice (causa común del error),
+    # sácalas para que sean columnas normales visibles para sort_values.
+    if set(group_cols).intersection(df.index.names):
+        df = df.reset_index()
+
     df[date_col] = pd.to_datetime(df[date_col])
+
+    # Ahora esto no fallará con KeyError
     df = df.sort_values(group_cols + [date_col])
-    def _make(g):
-        for lag in lags:
-            g[f"{target}_lag{lag}"] = g[target].shift(lag)
-        for w in rolling_windows:
-            g[f"{target}_roll{w}"] = g[target].rolling(window=w, min_periods=1).mean()
-        return g
-    df = df.groupby(group_cols, group_keys=False).apply(_make)
+
+    # --- OPCIÓN RECOMENDADA PARA PANDAS NUEVO ---
+    # Evitamos 'apply' por completo. 'apply' es lento y problemático
+    # con las columnas en las versiones nuevas. Usamos asignación directa.
+
+    # Creamos el objeto groupby una sola vez
+    grouped = df.groupby(group_cols)[target]
+
+    # 1. Crear LAGS (Vectorizado)
+    for lag in lags:
+        df[f"{target}_lag{lag}"] = grouped.shift(lag)
+
+    # 2. Crear ROLLING (Vectorizado con transform)
+    for w in rolling_windows:
+        # transform garantiza que el indice se mantenga alineado con el df original
+        df[f"{target}_roll{w}"] = grouped.transform(lambda x: x.rolling(window=w, min_periods=1).mean())
+
     return df
