@@ -31,13 +31,29 @@ jobs:
         env:
           HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
         run: |
-          ipython notebooks/2_air_quality_feature_pipeline.ipynb
-          ipython notebooks/4_air_quality_batch_inference.ipynb
+          set +e
+          echo "=== RUNNING FEATURE PIPELINE ===" > execute.log
+          ipython notebooks/2_air_quality_feature_pipeline.ipynb >> execute.log 2>&1
+          PIPE_CODE=$?
+          echo "=== RUNNING BATCH INFERENCE ===" >> execute.log
+          ipython notebooks/4_air_quality_batch_inference.ipynb >> execute.log 2>&1
+          INF_CODE=$?
+          cat execute.log
+          mkdir -p docs
+          if [ $PIPE_CODE -ne 0 ] || [ $INF_CODE -ne 0 ]; then
+            echo "Pipeline failed (Pipeline: $PIPE_CODE, Inference: $INF_CODE)"
+            mv execute.log docs/pipeline_error.log
+            exit 1
+          else
+            echo "Pipeline succeeded!"
+            rm -f docs/pipeline_error.log
+          fi
 
       - name: Commit updated dashboard (docs/)
+        if: always()
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update Air Quality Dashboard"
+          commit_message: "Update Air Quality Dashboard / Logs"
           commit_options: '--no-verify --signoff'
 
           file_pattern: 'docs/**'
@@ -47,3 +63,4 @@ jobs:
           skip_dirty_check: false   
           skip_fetch: true
           skip_checkout: true
+
