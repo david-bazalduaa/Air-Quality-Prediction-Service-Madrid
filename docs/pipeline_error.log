@@ -1,9 +1,9 @@
 === RUNNING FEATURE PIPELINE ===
-2026-07-08 14:45:11,454 INFO: Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: In FT2Font: Can not load face (unknown file format; error code 0x2)
-2026-07-08 14:45:11,580 INFO: generated new fontManager
-2026-07-08 14:45:12,044 INFO: Initializing external client
-2026-07-08 14:45:12,044 INFO: Base URL: https://eu-west.cloud.hopsworks.ai:443
-2026-07-08 14:45:13,847 INFO: Python Engine initialized.
+2026-07-09 15:39:04,650 INFO: Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: In FT2Font: Can not load face (unknown file format; error code 0x2)
+2026-07-09 15:39:04,699 INFO: generated new fontManager
+2026-07-09 15:39:05,257 INFO: Initializing external client
+2026-07-09 15:39:05,257 INFO: Base URL: https://eu-west.cloud.hopsworks.ai:443
+2026-07-09 15:39:07,255 INFO: Python Engine initialized.
 Local environment
 Added the following directory to the PYTHONPATH: /home/runner/work/Air-Quality-Prediction-Service-Madrid/Air-Quality-Prediction-Service-Madrid
 HopsworksSettings initialized!
@@ -76,13 +76,14 @@ Data columns (total 12 columns):
  11  street                       49 non-null     object        
 dtypes: datetime64[ns](1), float32(7), object(4)
 memory usage: 3.6+ KB
-Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Finished: Reading data from Hopsworks, using Hopsworks Feature Query Service (2.45s) 
+Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Finished: Reading data from Hopsworks, using Hopsworks Feature Query Service (2.16s) 
 Uploading Dataframe: 0.00% |          | Rows 0/7 | Elapsed Time: 00:00 | Remaining Time: ?Uploading Dataframe: 100.00% |██████████| Rows 7/7 | Elapsed Time: 00:00 | Remaining Time: 00:00
-2026-07-08 14:45:43,501 INFO: Waiting for execution to finish. Current state: SUBMITTED. Final status: UNDEFINED
-2026-07-08 14:45:47,130 INFO: Waiting for execution to finish. Current state: RUNNING. Final status: UNDEFINED
-2026-07-08 14:48:21,954 INFO: Waiting for execution to finish. Current state: FAILED. Final status: FAILED
-2026-07-08 14:48:22,535 INFO: Waiting for log aggregation to finish.
-2026-07-08 14:48:22,535 ERROR: Execution failed with status: FAILED. See the logs for more information.
+2026-07-09 15:39:36,477 INFO: Waiting for execution to finish. Current state: SUBMITTED. Final status: UNDEFINED
+2026-07-09 15:39:40,133 INFO: Waiting for execution to finish. Current state: RUNNING. Final status: UNDEFINED
+2026-07-09 15:42:38,207 INFO: Waiting for execution to finish. Current state: FAILING. Final status: UNDEFINED
+2026-07-09 15:42:41,852 INFO: Waiting for execution to finish. Current state: FAILED. Final status: FAILED
+2026-07-09 15:42:42,460 INFO: Waiting for log aggregation to finish.
+2026-07-09 15:42:42,460 ERROR: Execution failed with status: FAILED. See the logs for more information.
 Launching job: air_quality_madrid_1_offline_fg_materialization
 Job started successfully, you can follow the progress at 
 https://eu-west.cloud.hopsworks.ai:443/p/3209/jobs/named/air_quality_madrid_1_offline_fg_materialization/executions
@@ -92,83 +93,82 @@ https://eu-west.cloud.hopsworks.ai:443/p/3209/jobs/named/air_quality_madrid_1_of
 [32m      1[39m [38;5;66;03m# Insert new data[39;00m
 [32m----> [39m[32m2[39m [30;43mair_quality_fg[39;49m[30;43m.[39;49m[30;43minsert[39;49m[30;43m([39;49m[30;43maq_today_processed[39;49m[30;43m,[39;49m[30;43mwait[39;49m[30;43m=[39;49m[30;43;01mTrue[39;49;00m[30;43m)[39;49m
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/feature_group.py:3949[39m, in [36mFeatureGroup.insert[39m[34m(self, features, overwrite, operation, storage, write_options, validation_options, wait, transformation_context, transform)[39m
-[32m   3946[39m     write_options[[33m"[39m[33mdelta.enableChangeDataFeed[39m[33m"[39m] = [33m"[39m[33mtrue[39m[33m"[39m
-[32m   3948[39m storage_normalized = storage.lower() [38;5;28;01mif[39;00m storage [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
-[32m-> [39m[32m3949[39m job, ge_report = [30;43mself[39;49m[30;43m.[39;49m[30;43m_feature_group_engine[39;49m[30;43m.[39;49m[30;43m_insert[39;49m[30;43m([39;49m
-[32m   3950[39m [30;43m    [39;49m[30;43mself[39;49m[30;43m,[39;49m
-[32m   3951[39m [30;43m    [39;49m[30;43mfeature_dataframe[39;49m[30;43m=[39;49m[30;43mfeature_dataframe[39;49m[30;43m,[39;49m
-[32m   3952[39m [30;43m    [39;49m[30;43moverwrite[39;49m[30;43m=[39;49m[30;43moverwrite[39;49m[30;43m,[39;49m
-[32m   3953[39m [30;43m    [39;49m[30;43moperation[39;49m[30;43m=[39;49m[30;43moperation[39;49m[30;43m,[39;49m
-[32m   3954[39m [30;43m    [39;49m[30;43mstorage[39;49m[30;43m=[39;49m[30;43mstorage_normalized[39;49m[30;43m,[39;49m
-[32m   3955[39m [30;43m    [39;49m[30;43mwrite_options[39;49m[30;43m=[39;49m[30;43mwrite_options[39;49m[30;43m,[39;49m
-[32m   3956[39m [30;43m    [39;49m[30;43mvalidation_options[39;49m[30;43m=[39;49m[30;43m{[39;49m[30;43m"[39;49m[30;43msave_report[39;49m[30;43m"[39;49m[30;43m:[39;49m[30;43m [39;49m[30;43;01mTrue[39;49;00m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mvalidation_options[39;49m[30;43m}[39;49m[30;43m,[39;49m
-[32m   3957[39m [30;43m    [39;49m[30;43mtransformation_context[39;49m[30;43m=[39;49m[30;43mtransformation_context[39;49m[30;43m,[39;49m
-[32m   3958[39m [30;43m    [39;49m[30;43mtransform[39;49m[30;43m=[39;49m[30;43mtransform[39;49m[30;43m,[39;49m
-[32m   3959[39m [30;43m[39;49m[30;43m)[39;49m
-[32m   3961[39m [38;5;66;03m# Compute stats in client if there is no backfill job:[39;00m
-[32m   3962[39m [38;5;66;03m# - spark engine: always compute in client[39;00m
-[32m   3963[39m [38;5;66;03m# - python engine: only compute if FG is offline only (no backfill job)[39;00m
-[32m   3964[39m [38;5;28;01mif[39;00m (
-[32m   3965[39m     engine._get_type().startswith([33m"[39m[33mspark[39m[33m"[39m)
-[32m   3966[39m     [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m.stream
-[32m   3967[39m     [38;5;129;01mand[39;00m storage_normalized != [33m"[39m[33monline[39m[33m"[39m
-[32m   3968[39m ):
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/feature_group.py:4013[39m, in [36mFeatureGroup.insert[39m[34m(self, features, overwrite, operation, storage, write_options, validation_options, wait, transformation_context, transform, n_processes)[39m
+[32m   4010[39m     write_options[[33m"[39m[33mdelta.enableChangeDataFeed[39m[33m"[39m] = [33m"[39m[33mtrue[39m[33m"[39m
+[32m   4012[39m storage_normalized = storage.lower() [38;5;28;01mif[39;00m storage [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+[32m-> [39m[32m4013[39m job, ge_report = [30;43mself[39;49m[30;43m.[39;49m[30;43m_feature_group_engine[39;49m[30;43m.[39;49m[30;43m_insert[39;49m[30;43m([39;49m
+[32m   4014[39m [30;43m    [39;49m[30;43mself[39;49m[30;43m,[39;49m
+[32m   4015[39m [30;43m    [39;49m[30;43mfeature_dataframe[39;49m[30;43m=[39;49m[30;43mfeature_dataframe[39;49m[30;43m,[39;49m
+[32m   4016[39m [30;43m    [39;49m[30;43moverwrite[39;49m[30;43m=[39;49m[30;43moverwrite[39;49m[30;43m,[39;49m
+[32m   4017[39m [30;43m    [39;49m[30;43moperation[39;49m[30;43m=[39;49m[30;43moperation[39;49m[30;43m,[39;49m
+[32m   4018[39m [30;43m    [39;49m[30;43mstorage[39;49m[30;43m=[39;49m[30;43mstorage_normalized[39;49m[30;43m,[39;49m
+[32m   4019[39m [30;43m    [39;49m[30;43mwrite_options[39;49m[30;43m=[39;49m[30;43mwrite_options[39;49m[30;43m,[39;49m
+[32m   4020[39m [30;43m    [39;49m[30;43mvalidation_options[39;49m[30;43m=[39;49m[30;43m{[39;49m[30;43m"[39;49m[30;43msave_report[39;49m[30;43m"[39;49m[30;43m:[39;49m[30;43m [39;49m[30;43;01mTrue[39;49;00m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mvalidation_options[39;49m[30;43m}[39;49m[30;43m,[39;49m
+[32m   4021[39m [30;43m    [39;49m[30;43mtransformation_context[39;49m[30;43m=[39;49m[30;43mtransformation_context[39;49m[30;43m,[39;49m
+[32m   4022[39m [30;43m    [39;49m[30;43mtransform[39;49m[30;43m=[39;49m[30;43mtransform[39;49m[30;43m,[39;49m
+[32m   4023[39m [30;43m    [39;49m[30;43mn_processes[39;49m[30;43m=[39;49m[30;43mn_processes[39;49m[30;43m,[39;49m
+[32m   4024[39m [30;43m[39;49m[30;43m)[39;49m
+[32m   4026[39m [38;5;66;03m# Stats are computed automatically by the ingestion-triggered FM job on the backend.[39;00m
+[32m   4027[39m [38;5;66;03m# No client-side trigger needed.[39;00m
+[32m   4029[39m [38;5;28;01mreturn[39;00m (
+[32m   4030[39m     job,
+[32m   4031[39m     ge_report.to_ge_type() [38;5;28;01mif[39;00m ge_report [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m,
+[32m   4032[39m )
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/feature_group_engine.py:317[39m, in [36mFeatureGroupEngine._insert[39m[34m(self, feature_group, feature_dataframe, overwrite, operation, storage, write_options, validation_options, transformation_context, transform)[39m
-[32m    313[39m [38;5;28;01mif[39;00m overwrite:
-[32m    314[39m     [38;5;28mself[39m._feature_group_api._delete_content(feature_group)
-[32m    316[39m [38;5;28;01mreturn[39;00m (
-[32m--> [39m[32m317[39m     [30;43mengine[39;49m[30;43m.[39;49m[30;43m_get_instance[39;49m[30;43m([39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43m_save_dataframe[39;49m[30;43m([39;49m
-[32m    318[39m [30;43m        [39;49m[30;43mfeature_group[39;49m[30;43m,[39;49m
-[32m    319[39m [30;43m        [39;49m[30;43mfeature_dataframe[39;49m[30;43m,[39;49m
-[32m    320[39m [30;43m        [39;49m[30;43m"[39;49m[30;43mbulk_insert[39;49m[30;43m"[39;49m[30;43m [39;49m[30;43;01mif[39;49;00m[30;43m [39;49m[30;43moverwrite[39;49m[30;43m [39;49m[30;43;01melse[39;49;00m[30;43m [39;49m[30;43moperation[39;49m[30;43m,[39;49m
-[32m    321[39m [30;43m        [39;49m[30;43mfeature_group[39;49m[30;43m.[39;49m[30;43monline_enabled[39;49m[30;43m,[39;49m
-[32m    322[39m [30;43m        [39;49m[30;43mstorage[39;49m[30;43m,[39;49m
-[32m    323[39m [30;43m        [39;49m[30;43moffline_write_options[39;49m[30;43m,[39;49m
-[32m    324[39m [30;43m        [39;49m[30;43monline_write_options[39;49m[30;43m,[39;49m
-[32m    325[39m [30;43m    [39;49m[30;43m)[39;49m,
-[32m    326[39m     ge_report,
-[32m    327[39m )
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/feature_group_engine.py:332[39m, in [36mFeatureGroupEngine._insert[39m[34m(self, feature_group, feature_dataframe, overwrite, operation, storage, write_options, validation_options, transformation_context, transform, n_processes)[39m
+[32m    328[39m [38;5;28;01mif[39;00m overwrite:
+[32m    329[39m     [38;5;28mself[39m._feature_group_api._delete_content(feature_group)
+[32m    331[39m [38;5;28;01mreturn[39;00m (
+[32m--> [39m[32m332[39m     [30;43mengine[39;49m[30;43m.[39;49m[30;43m_get_instance[39;49m[30;43m([39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43m_save_dataframe[39;49m[30;43m([39;49m
+[32m    333[39m [30;43m        [39;49m[30;43mfeature_group[39;49m[30;43m,[39;49m
+[32m    334[39m [30;43m        [39;49m[30;43mfeature_dataframe[39;49m[30;43m,[39;49m
+[32m    335[39m [30;43m        [39;49m[30;43m"[39;49m[30;43mbulk_insert[39;49m[30;43m"[39;49m[30;43m [39;49m[30;43;01mif[39;49;00m[30;43m [39;49m[30;43moverwrite[39;49m[30;43m [39;49m[30;43;01melse[39;49;00m[30;43m [39;49m[30;43moperation[39;49m[30;43m,[39;49m
+[32m    336[39m [30;43m        [39;49m[30;43mfeature_group[39;49m[30;43m.[39;49m[30;43monline_enabled[39;49m[30;43m,[39;49m
+[32m    337[39m [30;43m        [39;49m[30;43mstorage[39;49m[30;43m,[39;49m
+[32m    338[39m [30;43m        [39;49m[30;43moffline_write_options[39;49m[30;43m,[39;49m
+[32m    339[39m [30;43m        [39;49m[30;43monline_write_options[39;49m[30;43m,[39;49m
+[32m    340[39m [30;43m    [39;49m[30;43m)[39;49m,
+[32m    341[39m     ge_report,
+[32m    342[39m )
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/engine/python.py:1096[39m, in [36mEngine._save_dataframe[39m[34m(self, feature_group, dataframe, operation, online_enabled, storage, offline_write_options, online_write_options, validation_id)[39m
-[32m   1080[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m_save_dataframe[39m(
-[32m   1081[39m     [38;5;28mself[39m,
-[32m   1082[39m     feature_group: FeatureGroup,
-[32m   (...)[39m[32m   1089[39m     validation_id: [38;5;28mint[39m | [38;5;28;01mNone[39;00m = [38;5;28;01mNone[39;00m,
-[32m   1090[39m ) -> job.Job | [38;5;28;01mNone[39;00m:
-[32m   1091[39m     [38;5;28;01mif[39;00m (
-[32m   1092[39m         [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(feature_group, fg_mod.ExternalFeatureGroup)
-[32m   1093[39m         [38;5;129;01mand[39;00m feature_group.stream
-[32m   1094[39m     ):
-[32m   1095[39m         [38;5;66;03m# Streaming feature groups require the same data to be written on online and offline storage[39;00m
-[32m-> [39m[32m1096[39m         [38;5;28;01mreturn[39;00m [30;43mself[39;49m[30;43m.[39;49m[30;43m_run_materialization_job[39;49m[30;43m([39;49m
-[32m   1097[39m [30;43m            [39;49m[30;43mfeature_group[39;49m[30;43m,[39;49m
-[32m   1098[39m [30;43m            [39;49m[30;43mdataframe[39;49m[30;43m,[39;49m
-[32m   1099[39m [30;43m            [39;49m[30;43moffline_write_options[39;49m[30;43m,[39;49m
-[32m   1100[39m [30;43m            [39;49m[30;43;01mNone[39;49;00m[30;43m,[39;49m[30;43m  [39;49m[30;43;03m# doesnt support storage parameter[39;49;00m
-[32m   1101[39m [30;43m        [39;49m[30;43m)[39;49m
-[32m   1103[39m     inserted = [38;5;28;01mFalse[39;00m
-[32m   1104[39m     [38;5;28;01mif[39;00m (
-[32m   1105[39m         storage [38;5;129;01min[39;00m [[38;5;28;01mNone[39;00m, [33m"[39m[33moffline[39m[33m"[39m]
-[32m   1106[39m         [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(feature_group, fg_mod.ExternalFeatureGroup)
-[32m   1107[39m         [38;5;129;01mand[39;00m feature_group.time_travel_format == [33m"[39m[33mDELTA[39m[33m"[39m
-[32m   1108[39m     ):
-[32m   1109[39m         [38;5;66;03m# ExternalFeatureGroups have no offline storage, so offline writes are skipped.[39;00m
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/engine/python.py:1098[39m, in [36mEngine._save_dataframe[39m[34m(self, feature_group, dataframe, operation, online_enabled, storage, offline_write_options, online_write_options, validation_id)[39m
+[32m   1082[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m_save_dataframe[39m(
+[32m   1083[39m     [38;5;28mself[39m,
+[32m   1084[39m     feature_group: FeatureGroup,
+[32m   (...)[39m[32m   1091[39m     validation_id: [38;5;28mint[39m | [38;5;28;01mNone[39;00m = [38;5;28;01mNone[39;00m,
+[32m   1092[39m ) -> job.Job | [38;5;28;01mNone[39;00m:
+[32m   1093[39m     [38;5;28;01mif[39;00m (
+[32m   1094[39m         [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(feature_group, fg_mod.ExternalFeatureGroup)
+[32m   1095[39m         [38;5;129;01mand[39;00m feature_group.stream
+[32m   1096[39m     ):
+[32m   1097[39m         [38;5;66;03m# Streaming feature groups require the same data to be written on online and offline storage[39;00m
+[32m-> [39m[32m1098[39m         [38;5;28;01mreturn[39;00m [30;43mself[39;49m[30;43m.[39;49m[30;43m_run_materialization_job[39;49m[30;43m([39;49m
+[32m   1099[39m [30;43m            [39;49m[30;43mfeature_group[39;49m[30;43m,[39;49m
+[32m   1100[39m [30;43m            [39;49m[30;43mdataframe[39;49m[30;43m,[39;49m
+[32m   1101[39m [30;43m            [39;49m[30;43moffline_write_options[39;49m[30;43m,[39;49m
+[32m   1102[39m [30;43m            [39;49m[30;43;01mNone[39;49;00m[30;43m,[39;49m[30;43m  [39;49m[30;43;03m# doesnt support storage parameter[39;49;00m
+[32m   1103[39m [30;43m        [39;49m[30;43m)[39;49m
+[32m   1105[39m     inserted = [38;5;28;01mFalse[39;00m
+[32m   1106[39m     [38;5;28;01mif[39;00m (
+[32m   1107[39m         storage [38;5;129;01min[39;00m [[38;5;28;01mNone[39;00m, [33m"[39m[33moffline[39m[33m"[39m]
+[32m   1108[39m         [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(feature_group, fg_mod.ExternalFeatureGroup)
+[32m   1109[39m         [38;5;129;01mand[39;00m feature_group.time_travel_format == [33m"[39m[33mDELTA[39m[33m"[39m
+[32m   1110[39m     ):
+[32m   1111[39m         [38;5;66;03m# ExternalFeatureGroups have no offline storage, so offline writes are skipped.[39;00m
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/engine/python.py:1949[39m, in [36mEngine._run_materialization_job[39m[34m(self, feature_group, dataframe, offline_write_options, storage)[39m
-[32m   1947[39m         initial_check_point = [33m"[39m[33m"[39m
-[32m   1948[39m     [38;5;66;03m# provide the initial_check_point as it will reduce the read amplification of materialization job[39;00m
-[32m-> [39m[32m1949[39m     [30;43mfeature_group[39;49m[30;43m.[39;49m[30;43mmaterialization_job[39;49m[30;43m.[39;49m[30;43mrun[39;49m[30;43m([39;49m
-[32m   1950[39m [30;43m        [39;49m[30;43margs[39;49m[30;43m=[39;49m[30;43mfeature_group[39;49m[30;43m.[39;49m[30;43mmaterialization_job[39;49m[30;43m.[39;49m[30;43mconfig[39;49m[30;43m.[39;49m[30;43mget[39;49m[30;43m([39;49m[30;43m"[39;49m[30;43mdefaultArgs[39;49m[30;43m"[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m"[39;49m[30;43m"[39;49m[30;43m)[39;49m
-[32m   1951[39m [30;43m        [39;49m[30;43m+[39;49m[30;43m [39;49m[30;43m([39;49m
-[32m   1952[39m [30;43m            [39;49m[30;43mf[39;49m[30;43m"[39;49m[30;43m -initialCheckPointString [39;49m[30;43;01m{[39;49;00m[30;43minitial_check_point[39;49m[30;43;01m}[39;49;00m[30;43m"[39;49m
-[32m   1953[39m [30;43m            [39;49m[30;43;01mif[39;49;00m[30;43m [39;49m[30;43minitial_check_point[39;49m
-[32m   1954[39m [30;43m            [39;49m[30;43;01melse[39;49;00m[30;43m [39;49m[30;43m"[39;49m[30;43m"[39;49m
-[32m   1955[39m [30;43m        [39;49m[30;43m)[39;49m[30;43m,[39;49m
-[32m   1956[39m [30;43m        [39;49m[30;43mawait_termination[39;49m[30;43m=[39;49m[30;43moffline_write_options[39;49m[30;43m.[39;49m[30;43mget[39;49m[30;43m([39;49m[30;43m"[39;49m[30;43mwait_for_job[39;49m[30;43m"[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43;01mFalse[39;49;00m[30;43m)[39;49m[30;43m,[39;49m
-[32m   1957[39m [30;43m    [39;49m[30;43m)[39;49m
-[32m   1959[39m [38;5;28;01mreturn[39;00m feature_group.materialization_job
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/engine/python.py:2001[39m, in [36mEngine._run_materialization_job[39m[34m(self, feature_group, dataframe, offline_write_options, storage)[39m
+[32m   1999[39m         initial_check_point = [33m"[39m[33m"[39m
+[32m   2000[39m     [38;5;66;03m# provide the initial_check_point as it will reduce the read amplification of materialization job[39;00m
+[32m-> [39m[32m2001[39m     [30;43mfeature_group[39;49m[30;43m.[39;49m[30;43mmaterialization_job[39;49m[30;43m.[39;49m[30;43mrun[39;49m[30;43m([39;49m
+[32m   2002[39m [30;43m        [39;49m[30;43margs[39;49m[30;43m=[39;49m[30;43mfeature_group[39;49m[30;43m.[39;49m[30;43mmaterialization_job[39;49m[30;43m.[39;49m[30;43mconfig[39;49m[30;43m.[39;49m[30;43mget[39;49m[30;43m([39;49m[30;43m"[39;49m[30;43mdefaultArgs[39;49m[30;43m"[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m"[39;49m[30;43m"[39;49m[30;43m)[39;49m
+[32m   2003[39m [30;43m        [39;49m[30;43m+[39;49m[30;43m [39;49m[30;43m([39;49m
+[32m   2004[39m [30;43m            [39;49m[30;43mf[39;49m[30;43m"[39;49m[30;43m -initialCheckPointString [39;49m[30;43;01m{[39;49;00m[30;43minitial_check_point[39;49m[30;43;01m}[39;49;00m[30;43m"[39;49m
+[32m   2005[39m [30;43m            [39;49m[30;43;01mif[39;49;00m[30;43m [39;49m[30;43minitial_check_point[39;49m
+[32m   2006[39m [30;43m            [39;49m[30;43;01melse[39;49;00m[30;43m [39;49m[30;43m"[39;49m[30;43m"[39;49m
+[32m   2007[39m [30;43m        [39;49m[30;43m)[39;49m[30;43m,[39;49m
+[32m   2008[39m [30;43m        [39;49m[30;43mawait_termination[39;49m[30;43m=[39;49m[30;43moffline_write_options[39;49m[30;43m.[39;49m[30;43mget[39;49m[30;43m([39;49m[30;43m"[39;49m[30;43mwait_for_job[39;49m[30;43m"[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43;01mFalse[39;49;00m[30;43m)[39;49m[30;43m,[39;49m
+[32m   2009[39m [30;43m    [39;49m[30;43m)[39;49m
+[32m   2011[39m [38;5;28;01mreturn[39;00m feature_group.materialization_job
 
 [36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hopsworks_common/job.py:274[39m, in [36mJob.run[39m[34m(self, args, await_termination, start_time, end_time, logical_date, env_vars)[39m
 [32m    270[39m     [38;5;28mprint[39m(
@@ -190,8 +190,8 @@ https://eu-west.cloud.hopsworks.ai:443/p/3209/jobs/named/air_quality_madrid_1_of
 [32m    235[39m     )
 
 [31mJobExecutionException[39m: The Hopsworks Job failed, use the Hopsworks UI to access the job logs
-2026-07-08 14:48:23,403 INFO: Closing external client and cleaning up certificates.
-2026-07-08 14:48:23,404 INFO: Connection closed.
+2026-07-09 15:42:43,398 INFO: Closing external client and cleaning up certificates.
+2026-07-09 15:42:43,398 INFO: Connection closed.
 === RUNNING BATCH INFERENCE ===
 /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3056: UserWarning: Unknown failure executing file: </home/runner/work/Air-Quality-Prediction-Service-Madrid/Air-Quality-Prediction-Service-Madrid/notebooks/4_air_quality_batch_inference.ipynb>
   warn('Unknown failure executing file: <%s>' % fname)
