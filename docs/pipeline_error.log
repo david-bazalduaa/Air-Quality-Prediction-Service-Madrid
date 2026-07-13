@@ -1,10 +1,10 @@
 === RUNNING FEATURE PIPELINE ===
-2026-07-12 14:00:38,186 INFO: Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: In FT2Font: Can not load face (unknown file format; error code 0x2)
-2026-07-12 14:00:38,204 INFO: generated new fontManager
-2026-07-12 14:00:38,603 INFO: Initializing external client
-2026-07-12 14:00:38,603 INFO: Base URL: https://eu-west.cloud.hopsworks.ai:443
-2026-07-12 14:00:40,273 INFO: Python Engine initialized.
-2026-07-12 14:01:35,896 ERROR: Flight returned unavailable error, with message: failed to connect to all addresses; last error: UNKNOWN: ipv4:57.130.39.29:5005: tcp handshaker shutdown
+2026-07-13 15:17:43,724 INFO: Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: In FT2Font: Can not load face (unknown file format; error code 0x2)
+2026-07-13 15:17:43,731 INFO: generated new fontManager
+2026-07-13 15:17:44,074 INFO: Initializing external client
+2026-07-13 15:17:44,074 INFO: Base URL: https://eu-west.cloud.hopsworks.ai:443
+2026-07-13 15:17:46,137 INFO: Python Engine initialized.
+2026-07-13 15:18:41,929 ERROR: Flight returned unavailable error, with message: failed to connect to all addresses; last error: UNKNOWN: ipv4:57.130.39.29:5005: tcp handshaker shutdown
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/arrow_flight_client.py", line 244, in __init__
     self._health_check()
@@ -24,7 +24,7 @@ Traceback (most recent call last):
   File "pyarrow/_flight.pyx", line 1668, in _do_action_response
   File "pyarrow/_flight.pyx", line 68, in pyarrow._flight.check_flight_status
 pyarrow._flight.FlightUnavailableError: Flight returned unavailable error, with message: failed to connect to all addresses; last error: UNKNOWN: ipv4:57.130.39.29:5005: tcp handshaker shutdown
-2026-07-12 14:02:00,351 ERROR: Flight returned unavailable error, with message: failed to connect to all addresses; last error: UNKNOWN: ipv4:57.130.39.29:5005: Failed to connect to remote host: connect() timed out
+2026-07-13 15:19:06,501 ERROR: Flight returned unavailable error, with message: failed to connect to all addresses; last error: UNKNOWN: ipv4:57.130.39.29:5005: tcp handshaker shutdown
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/arrow_flight_client.py", line 433, in afs_error_handler_wrapper
     return func(instance, *args, **kw)
@@ -62,7 +62,7 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "pyarrow/_flight.pyx", line 1712, in pyarrow._flight.FlightClient.get_flight_info
   File "pyarrow/_flight.pyx", line 68, in pyarrow._flight.check_flight_status
-pyarrow._flight.FlightUnavailableError: Flight returned unavailable error, with message: failed to connect to all addresses; last error: UNKNOWN: ipv4:57.130.39.29:5005: Failed to connect to remote host: connect() timed out
+pyarrow._flight.FlightUnavailableError: Flight returned unavailable error, with message: failed to connect to all addresses; last error: UNKNOWN: ipv4:57.130.39.29:5005: tcp handshaker shutdown
 Local environment
 Added the following directory to the PYTHONPATH: /home/runner/work/Air-Quality-Prediction-Service-Madrid/Air-Quality-Prediction-Service-Madrid
 HopsworksSettings initialized!
@@ -225,7 +225,7 @@ Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading d
 [36mFile [39m[32mpyarrow/_flight.pyx:68[39m, in [36mpyarrow._flight.check_flight_status[39m[34m()[39m
 [32m---> [39m[32m68[39m [33m'Could not get source, probably due dynamically evaluated source code.'[39m
 
-[31mFlightUnavailableError[39m: Flight returned unavailable error, with message: failed to connect to all addresses; last error: UNKNOWN: ipv4:57.130.39.29:5005: Failed to connect to remote host: connect() timed out
+[31mFlightUnavailableError[39m: Flight returned unavailable error, with message: failed to connect to all addresses; last error: UNKNOWN: ipv4:57.130.39.29:5005: tcp handshaker shutdown
 
 During handling of the above exception, another exception occurred:
 
@@ -307,8 +307,8 @@ During handling of the above exception, another exception occurred:
 [32m    443[39m     [38;5;28;01mreturn[39;00m func(instance, *args, **kw)
 
 [31mAttributeError[39m: 'ArrowFlightClient' object has no attribute '_server_version'
-2026-07-12 14:02:01,124 INFO: Closing external client and cleaning up certificates.
-2026-07-12 14:02:01,124 INFO: Connection closed.
+2026-07-13 15:19:07,144 INFO: Closing external client and cleaning up certificates.
+2026-07-13 15:19:07,144 INFO: Connection closed.
 === RUNNING BATCH INFERENCE ===
 /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3056: UserWarning: Unknown failure executing file: </home/runner/work/Air-Quality-Prediction-Service-Madrid/Air-Quality-Prediction-Service-Madrid/notebooks/4_air_quality_batch_inference.ipynb>
   warn('Unknown failure executing file: <%s>' % fname)
