@@ -1,68 +1,9 @@
 === RUNNING FEATURE PIPELINE ===
-2026-07-14 14:20:01,785 INFO: Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: In FT2Font: Can not load face (unknown file format; error code 0x2)
-2026-07-14 14:20:01,833 INFO: generated new fontManager
-2026-07-14 14:20:02,202 INFO: Initializing external client
-2026-07-14 14:20:02,202 INFO: Base URL: https://eu-west.cloud.hopsworks.ai:443
-2026-07-14 14:20:04,553 INFO: Python Engine initialized.
-2026-07-14 14:21:00,567 ERROR: Flight returned unavailable error, with message: failed to connect to all addresses; last error: UNKNOWN: ipv4:57.130.39.29:5005: tcp handshaker shutdown
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/arrow_flight_client.py", line 244, in __init__
-    self._health_check()
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py", line 55, in wrapped_f
-    return Retrying(*dargs, **dkw).call(f, *args, **kw)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py", line 289, in call
-    raise attempt.get()
-          ^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py", line 326, in get
-    raise exc.with_traceback(tb)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py", line 273, in call
-    attempt = Attempt(fn(*args, **kwargs), attempt_number, False)
-                      ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/arrow_flight_client.py", line 345, in _health_check
-    list(self._connection.do_action(action, options=options))
-  File "pyarrow/_flight.pyx", line 1668, in _do_action_response
-  File "pyarrow/_flight.pyx", line 68, in pyarrow._flight.check_flight_status
-pyarrow._flight.FlightUnavailableError: Flight returned unavailable error, with message: failed to connect to all addresses; last error: UNKNOWN: ipv4:57.130.39.29:5005: tcp handshaker shutdown
-2026-07-14 14:21:25,147 ERROR: Flight returned unavailable error, with message: failed to connect to all addresses; last error: UNKNOWN: ipv4:57.130.39.29:5005: tcp handshaker shutdown
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/arrow_flight_client.py", line 433, in afs_error_handler_wrapper
-    return func(instance, *args, **kw)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/arrow_flight_client.py", line 505, in _read_query
-    return self._get_dataset(
-           ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py", line 55, in wrapped_f
-    return Retrying(*dargs, **dkw).call(f, *args, **kw)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py", line 289, in call
-    raise attempt.get()
-          ^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py", line 326, in get
-    raise exc.with_traceback(tb)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py", line 273, in call
-    attempt = Attempt(fn(*args, **kwargs), attempt_number, False)
-                      ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/arrow_flight_client.py", line 484, in _get_dataset
-    info = self._get_flight_info(descriptor)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py", line 55, in wrapped_f
-    return Retrying(*dargs, **dkw).call(f, *args, **kw)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py", line 289, in call
-    raise attempt.get()
-          ^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py", line 326, in get
-    raise exc.with_traceback(tb)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py", line 273, in call
-    attempt = Attempt(fn(*args, **kwargs), attempt_number, False)
-                      ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/arrow_flight_client.py", line 469, in _get_flight_info
-    return self._connection.get_flight_info(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "pyarrow/_flight.pyx", line 1712, in pyarrow._flight.FlightClient.get_flight_info
-  File "pyarrow/_flight.pyx", line 68, in pyarrow._flight.check_flight_status
-pyarrow._flight.FlightUnavailableError: Flight returned unavailable error, with message: failed to connect to all addresses; last error: UNKNOWN: ipv4:57.130.39.29:5005: tcp handshaker shutdown
+2026-07-15 14:16:36,838 INFO: Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: In FT2Font: Can not load face (unknown file format; error code 0x2)
+2026-07-15 14:16:37,524 INFO: generated new fontManager
+2026-07-15 14:16:38,059 INFO: Initializing external client
+2026-07-15 14:16:38,059 INFO: Base URL: https://eu-west.cloud.hopsworks.ai:443
+2026-07-15 14:16:39,987 INFO: Python Engine initialized.
 Local environment
 Added the following directory to the PYTHONPATH: /home/runner/work/Air-Quality-Prediction-Service-Madrid/Air-Quality-Prediction-Service-Madrid
 HopsworksSettings initialized!
@@ -135,180 +76,121 @@ Data columns (total 12 columns):
  11  street                       49 non-null     object        
 dtypes: datetime64[ns](1), float32(7), object(4)
 memory usage: 3.6+ KB
-Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Error: Reading data from Hopsworks, using Hopsworks Feature Query Service           
+Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Finished: Reading data from Hopsworks, using Hopsworks Feature Query Service (2.52s) 
+Uploading Dataframe: 0.00% |          | Rows 0/7 | Elapsed Time: 00:00 | Remaining Time: ?Uploading Dataframe: 100.00% |██████████| Rows 7/7 | Elapsed Time: 00:00 | Remaining Time: 00:00
+2026-07-15 14:17:10,394 INFO: Waiting for execution to finish. Current state: SUBMITTED. Final status: UNDEFINED
+2026-07-15 14:17:13,998 INFO: Waiting for execution to finish. Current state: RUNNING. Final status: UNDEFINED
+2026-07-15 14:19:51,990 INFO: Waiting for execution to finish. Current state: AGGREGATING_LOGS. Final status: FAILED
+2026-07-15 14:19:52,177 INFO: Waiting for log aggregation to finish.
+2026-07-15 14:20:05,357 ERROR: Execution failed with status: FAILED. See the logs for more information.
+Launching job: air_quality_madrid_1_offline_fg_materialization
+Job started successfully, you can follow the progress at 
+https://eu-west.cloud.hopsworks.ai:443/p/3209/jobs/named/air_quality_madrid_1_offline_fg_materialization/executions
 [31m---------------------------------------------------------------------------[39m
-[31mFlightUnavailableError[39m                    Traceback (most recent call last)
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/arrow_flight_client.py:433[39m, in [36mArrowFlightClient._handle_afs_exception.<locals>.decorator.<locals>.afs_error_handler_wrapper[39m[34m(instance, *args, **kw)[39m
-[32m    432[39m [38;5;28;01mtry[39;00m:
-[32m--> [39m[32m433[39m     [38;5;28;01mreturn[39;00m [30;43mfunc[39;49m[30;43m([39;49m[30;43minstance[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43margs[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mkw[39;49m[30;43m)[39;49m
-[32m    434[39m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m e:
-
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/arrow_flight_client.py:505[39m, in [36mArrowFlightClient._read_query[39m[34m(self, query_object, arrow_flight_config, dataframe_type)[39m
-[32m    504[39m descriptor = pyarrow.flight.FlightDescriptor.for_command(query_encoded)
-[32m--> [39m[32m505[39m [38;5;28;01mreturn[39;00m [30;43mself[39;49m[30;43m.[39;49m[30;43m_get_dataset[39;49m[30;43m([39;49m
-[32m    506[39m [30;43m    [39;49m[30;43mdescriptor[39;49m[30;43m,[39;49m
-[32m    507[39m [30;43m    [39;49m[30;43m([39;49m
-[32m    508[39m [30;43m        [39;49m[30;43marrow_flight_config[39;49m[30;43m.[39;49m[30;43mget[39;49m[30;43m([39;49m[30;43m"[39;49m[30;43mtimeout[39;49m[30;43m"[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mtimeout[39;49m[30;43m)[39;49m
-[32m    509[39m [30;43m        [39;49m[30;43;01mif[39;49;00m[30;43m [39;49m[30;43marrow_flight_config[39;49m
-[32m    510[39m [30;43m        [39;49m[30;43;01melse[39;49;00m[30;43m [39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mtimeout[39;49m
-[32m    511[39m [30;43m    [39;49m[30;43m)[39;49m[30;43m,[39;49m
-[32m    512[39m [30;43m    [39;49m[30;43mheaders[39;49m[30;43m=[39;49m[30;43m([39;49m
-[32m    513[39m [30;43m        [39;49m[30;43m[[39;49m
-[32m    514[39m [30;43m            [39;49m[30;43m([39;49m
-[32m    515[39m [30;43m                [39;49m[30;43mb[39;49m[30;43m"[39;49m[30;43mhopsworks-signature[39;49m[30;43m"[39;49m[30;43m,[39;49m
-[32m    516[39m [30;43m                [39;49m[30;43mquery_object[39;49m[30;43m.[39;49m[30;43mhqs_payload_signature[39;49m[30;43m.[39;49m[30;43mencode[39;49m[30;43m([39;49m[30;43m"[39;49m[30;43mascii[39;49m[30;43m"[39;49m[30;43m)[39;49m[30;43m,[39;49m
-[32m    517[39m [30;43m            [39;49m[30;43m)[39;49m
-[32m    518[39m [30;43m        [39;49m[30;43m][39;49m
-[32m    519[39m [30;43m        [39;49m[30;43;01mif[39;49;00m[30;43m [39;49m[30;43mquery_object[39;49m[30;43m.[39;49m[30;43mhqs_payload_signature[39;49m
-[32m    520[39m [30;43m        [39;49m[30;43;01melse[39;49;00m[30;43m [39;49m[30;43;01mNone[39;49;00m
-[32m    521[39m [30;43m    [39;49m[30;43m)[39;49m[30;43m,[39;49m
-[32m    522[39m [30;43m    [39;49m[30;43mdataframe_type[39;49m[30;43m=[39;49m[30;43mdataframe_type[39;49m[30;43m,[39;49m
-[32m    523[39m [30;43m[39;49m[30;43m)[39;49m
-
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py:55[39m, in [36mretry.<locals>.wrap.<locals>.wrapped_f[39m[34m(*args, **kw)[39m
-[32m     53[39m [38;5;129m@wraps[39m(f)
-[32m     54[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mwrapped_f[39m(*args, **kw):
-[32m---> [39m[32m55[39m     [38;5;28;01mreturn[39;00m [30;43mRetrying[39;49m[30;43m([39;49m[30;43m*[39;49m[30;43mdargs[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mdkw[39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43mcall[39;49m[30;43m([39;49m[30;43mf[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43margs[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mkw[39;49m[30;43m)[39;49m
-
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py:289[39m, in [36mRetrying.call[39m[34m(self, fn, *args, **kwargs)[39m
-[32m    287[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._wrap_exception [38;5;129;01mand[39;00m attempt.has_exception:
-[32m    288[39m     [38;5;66;03m# get() on an attempt with an exception should cause it to be raised, but raise just in case[39;00m
-[32m--> [39m[32m289[39m     [38;5;28;01mraise[39;00m [30;43mattempt[39;49m[30;43m.[39;49m[30;43mget[39;49m[30;43m([39;49m[30;43m)[39;49m
-[32m    290[39m [38;5;28;01melse[39;00m:
-
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py:326[39m, in [36mAttempt.get[39m[34m(self, wrap_exception)[39m
-[32m    325[39m         exc_type, exc, tb = [38;5;28mself[39m.value
-[32m--> [39m[32m326[39m         [38;5;28;01mraise[39;00m exc.with_traceback(tb)
-[32m    327[39m [38;5;28;01melse[39;00m:
-
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py:273[39m, in [36mRetrying.call[39m[34m(self, fn, *args, **kwargs)[39m
-[32m    272[39m [38;5;28;01mtry[39;00m:
-[32m--> [39m[32m273[39m     attempt = Attempt([30;43mfn[39;49m[30;43m([39;49m[30;43m*[39;49m[30;43margs[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mkwargs[39;49m[30;43m)[39;49m, attempt_number, [38;5;28;01mFalse[39;00m)
-[32m    274[39m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m:
-
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/arrow_flight_client.py:484[39m, in [36mArrowFlightClient._get_dataset[39m[34m(self, descriptor, timeout, headers, dataframe_type)[39m
-[32m    483[39m     timeout = [38;5;28mself[39m.timeout
-[32m--> [39m[32m484[39m info = [30;43mself[39;49m[30;43m.[39;49m[30;43m_get_flight_info[39;49m[30;43m([39;49m[30;43mdescriptor[39;49m[30;43m)[39;49m
-[32m    485[39m _logger.debug([33m"[39m[33mRetrieved flight info: [39m[38;5;132;01m%s[39;00m[33m. Fetching dataset.[39m[33m"[39m, [38;5;28mstr[39m(info))
-
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py:55[39m, in [36mretry.<locals>.wrap.<locals>.wrapped_f[39m[34m(*args, **kw)[39m
-[32m     53[39m [38;5;129m@wraps[39m(f)
-[32m     54[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mwrapped_f[39m(*args, **kw):
-[32m---> [39m[32m55[39m     [38;5;28;01mreturn[39;00m [30;43mRetrying[39;49m[30;43m([39;49m[30;43m*[39;49m[30;43mdargs[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mdkw[39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43mcall[39;49m[30;43m([39;49m[30;43mf[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43margs[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mkw[39;49m[30;43m)[39;49m
-
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py:289[39m, in [36mRetrying.call[39m[34m(self, fn, *args, **kwargs)[39m
-[32m    287[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._wrap_exception [38;5;129;01mand[39;00m attempt.has_exception:
-[32m    288[39m     [38;5;66;03m# get() on an attempt with an exception should cause it to be raised, but raise just in case[39;00m
-[32m--> [39m[32m289[39m     [38;5;28;01mraise[39;00m [30;43mattempt[39;49m[30;43m.[39;49m[30;43mget[39;49m[30;43m([39;49m[30;43m)[39;49m
-[32m    290[39m [38;5;28;01melse[39;00m:
-
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py:326[39m, in [36mAttempt.get[39m[34m(self, wrap_exception)[39m
-[32m    325[39m         exc_type, exc, tb = [38;5;28mself[39m.value
-[32m--> [39m[32m326[39m         [38;5;28;01mraise[39;00m exc.with_traceback(tb)
-[32m    327[39m [38;5;28;01melse[39;00m:
-
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/retrying.py:273[39m, in [36mRetrying.call[39m[34m(self, fn, *args, **kwargs)[39m
-[32m    272[39m [38;5;28;01mtry[39;00m:
-[32m--> [39m[32m273[39m     attempt = Attempt([30;43mfn[39;49m[30;43m([39;49m[30;43m*[39;49m[30;43margs[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mkwargs[39;49m[30;43m)[39;49m, attempt_number, [38;5;28;01mFalse[39;00m)
-[32m    274[39m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m:
-
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/arrow_flight_client.py:469[39m, in [36mArrowFlightClient._get_flight_info[39m[34m(self, descriptor)[39m
-[32m    468[39m options = pyarrow.flight.FlightCallOptions(timeout=[38;5;28mself[39m.health_check_timeout)
-[32m--> [39m[32m469[39m [38;5;28;01mreturn[39;00m [30;43mself[39;49m[30;43m.[39;49m[30;43m_connection[39;49m[30;43m.[39;49m[30;43mget_flight_info[39;49m[30;43m([39;49m
-[32m    470[39m [30;43m    [39;49m[30;43mdescriptor[39;49m[30;43m,[39;49m
-[32m    471[39m [30;43m    [39;49m[30;43moptions[39;49m[30;43m=[39;49m[30;43moptions[39;49m[30;43m,[39;49m
-[32m    472[39m [30;43m[39;49m[30;43m)[39;49m
-
-[36mFile [39m[32mpyarrow/_flight.pyx:1712[39m, in [36mpyarrow._flight.FlightClient.get_flight_info[39m[34m()[39m
-[32m-> [39m[32m1712[39m [33m'Could not get source, probably due dynamically evaluated source code.'[39m
-
-[36mFile [39m[32mpyarrow/_flight.pyx:68[39m, in [36mpyarrow._flight.check_flight_status[39m[34m()[39m
-[32m---> [39m[32m68[39m [33m'Could not get source, probably due dynamically evaluated source code.'[39m
-
-[31mFlightUnavailableError[39m: Flight returned unavailable error, with message: failed to connect to all addresses; last error: UNKNOWN: ipv4:57.130.39.29:5005: tcp handshaker shutdown
-
-During handling of the above exception, another exception occurred:
-
-[31mAttributeError[39m                            Traceback (most recent call last)
+[31mJobExecutionException[39m                     Traceback (most recent call last)
 [36mCell[39m[36m [39m[32mIn[1][39m[32m, line 2[39m
-[32m      1[39m [38;5;66;03m# Read historical air quality data[39;00m
-[32m----> [39m[32m2[39m history_df = [30;43mair_quality_fg[39;49m[30;43m.[39;49m[30;43mread[39;49m[30;43m([39;49m[30;43m)[39;49m
-[32m      4[39m history_df[[33m"[39m[33mdate[39m[33m"[39m] = pd.to_datetime(history_df[[33m"[39m[33mdate[39m[33m"[39m], utc=[38;5;28;01mTrue[39;00m).dt.tz_convert([38;5;28;01mNone[39;00m)
-[32m      6[39m aq_today_df[[33m"[39m[33mdate[39m[33m"[39m] = pd.to_datetime(aq_today_df[[33m"[39m[33mdate[39m[33m"[39m], utc=[38;5;28;01mTrue[39;00m).dt.tz_convert([38;5;28;01mNone[39;00m)
+[32m      1[39m [38;5;66;03m# Insert new data[39;00m
+[32m----> [39m[32m2[39m [30;43mair_quality_fg[39;49m[30;43m.[39;49m[30;43minsert[39;49m[30;43m([39;49m[30;43maq_today_processed[39;49m[30;43m,[39;49m[30;43mwait[39;49m[30;43m=[39;49m[30;43;01mTrue[39;49;00m[30;43m)[39;49m
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/feature_group.py:3493[39m, in [36mFeatureGroup.read[39m[34m(self, wallclock_time, online, dataframe_type, read_options, start_time, end_time)[39m
-[32m   3488[39m     time_filter = util._build_time_filter(
-[32m   3489[39m         event_time_feature, start_time, end_time
-[32m   3490[39m     )
-[32m   3491[39m     query = query.filter(time_filter)
-[32m-> [39m[32m3493[39m [38;5;28;01mreturn[39;00m [30;43mquery[39;49m[30;43m.[39;49m[30;43mread[39;49m[30;43m([39;49m[30;43monline[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mdataframe_type[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mread_options[39;49m[30;43m [39;49m[30;43;01mor[39;49;00m[30;43m [39;49m[30;43m{[39;49m[30;43m}[39;49m[30;43m)[39;49m
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/feature_group.py:4013[39m, in [36mFeatureGroup.insert[39m[34m(self, features, overwrite, operation, storage, write_options, validation_options, wait, transformation_context, transform, n_processes)[39m
+[32m   4010[39m     write_options[[33m"[39m[33mdelta.enableChangeDataFeed[39m[33m"[39m] = [33m"[39m[33mtrue[39m[33m"[39m
+[32m   4012[39m storage_normalized = storage.lower() [38;5;28;01mif[39;00m storage [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+[32m-> [39m[32m4013[39m job, ge_report = [30;43mself[39;49m[30;43m.[39;49m[30;43m_feature_group_engine[39;49m[30;43m.[39;49m[30;43m_insert[39;49m[30;43m([39;49m
+[32m   4014[39m [30;43m    [39;49m[30;43mself[39;49m[30;43m,[39;49m
+[32m   4015[39m [30;43m    [39;49m[30;43mfeature_dataframe[39;49m[30;43m=[39;49m[30;43mfeature_dataframe[39;49m[30;43m,[39;49m
+[32m   4016[39m [30;43m    [39;49m[30;43moverwrite[39;49m[30;43m=[39;49m[30;43moverwrite[39;49m[30;43m,[39;49m
+[32m   4017[39m [30;43m    [39;49m[30;43moperation[39;49m[30;43m=[39;49m[30;43moperation[39;49m[30;43m,[39;49m
+[32m   4018[39m [30;43m    [39;49m[30;43mstorage[39;49m[30;43m=[39;49m[30;43mstorage_normalized[39;49m[30;43m,[39;49m
+[32m   4019[39m [30;43m    [39;49m[30;43mwrite_options[39;49m[30;43m=[39;49m[30;43mwrite_options[39;49m[30;43m,[39;49m
+[32m   4020[39m [30;43m    [39;49m[30;43mvalidation_options[39;49m[30;43m=[39;49m[30;43m{[39;49m[30;43m"[39;49m[30;43msave_report[39;49m[30;43m"[39;49m[30;43m:[39;49m[30;43m [39;49m[30;43;01mTrue[39;49;00m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mvalidation_options[39;49m[30;43m}[39;49m[30;43m,[39;49m
+[32m   4021[39m [30;43m    [39;49m[30;43mtransformation_context[39;49m[30;43m=[39;49m[30;43mtransformation_context[39;49m[30;43m,[39;49m
+[32m   4022[39m [30;43m    [39;49m[30;43mtransform[39;49m[30;43m=[39;49m[30;43mtransform[39;49m[30;43m,[39;49m
+[32m   4023[39m [30;43m    [39;49m[30;43mn_processes[39;49m[30;43m=[39;49m[30;43mn_processes[39;49m[30;43m,[39;49m
+[32m   4024[39m [30;43m[39;49m[30;43m)[39;49m
+[32m   4026[39m [38;5;66;03m# Stats are computed automatically by the ingestion-triggered FM job on the backend.[39;00m
+[32m   4027[39m [38;5;66;03m# No client-side trigger needed.[39;00m
+[32m   4029[39m [38;5;28;01mreturn[39;00m (
+[32m   4030[39m     job,
+[32m   4031[39m     ge_report.to_ge_type() [38;5;28;01mif[39;00m ge_report [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m,
+[32m   4032[39m )
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/constructor/query.py:360[39m, in [36mQuery.read[39m[34m(self, online, dataframe_type, read_options, start_time, end_time)[39m
-[32m    355[39m     [38;5;28;01mif[39;00m [38;5;28mlen[39m([38;5;28mself[39m.joins) > [32m0[39m [38;5;129;01mor[39;00m [38;5;28;01mNone[39;00m [38;5;129;01min[39;00m [f.type [38;5;28;01mfor[39;00m f [38;5;129;01min[39;00m schema]:
-[32m    356[39m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
-[32m    357[39m             [33m"[39m[33mPandas types casting only supported for feature_group.read()/query.select_all()[39m[33m"[39m
-[32m    358[39m         )
-[32m--> [39m[32m360[39m [38;5;28;01mreturn[39;00m [30;43mengine[39;49m[30;43m.[39;49m[30;43m_get_instance[39;49m[30;43m([39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43m_sql[39;49m[30;43m([39;49m
-[32m    361[39m [30;43m    [39;49m[30;43msql_query[39;49m[30;43m,[39;49m
-[32m    362[39m [30;43m    [39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43m_feature_store_name[39;49m[30;43m,[39;49m
-[32m    363[39m [30;43m    [39;49m[30;43monline_conn[39;49m[30;43m,[39;49m
-[32m    364[39m [30;43m    [39;49m[30;43mdataframe_type[39;49m[30;43m,[39;49m
-[32m    365[39m [30;43m    [39;49m[30;43mread_options[39;49m[30;43m,[39;49m
-[32m    366[39m [30;43m    [39;49m[30;43mschema[39;49m[30;43m,[39;49m
-[32m    367[39m [30;43m[39;49m[30;43m)[39;49m
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/feature_group_engine.py:332[39m, in [36mFeatureGroupEngine._insert[39m[34m(self, feature_group, feature_dataframe, overwrite, operation, storage, write_options, validation_options, transformation_context, transform, n_processes)[39m
+[32m    328[39m [38;5;28;01mif[39;00m overwrite:
+[32m    329[39m     [38;5;28mself[39m._feature_group_api._delete_content(feature_group)
+[32m    331[39m [38;5;28;01mreturn[39;00m (
+[32m--> [39m[32m332[39m     [30;43mengine[39;49m[30;43m.[39;49m[30;43m_get_instance[39;49m[30;43m([39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43m_save_dataframe[39;49m[30;43m([39;49m
+[32m    333[39m [30;43m        [39;49m[30;43mfeature_group[39;49m[30;43m,[39;49m
+[32m    334[39m [30;43m        [39;49m[30;43mfeature_dataframe[39;49m[30;43m,[39;49m
+[32m    335[39m [30;43m        [39;49m[30;43m"[39;49m[30;43mbulk_insert[39;49m[30;43m"[39;49m[30;43m [39;49m[30;43;01mif[39;49;00m[30;43m [39;49m[30;43moverwrite[39;49m[30;43m [39;49m[30;43;01melse[39;49;00m[30;43m [39;49m[30;43moperation[39;49m[30;43m,[39;49m
+[32m    336[39m [30;43m        [39;49m[30;43mfeature_group[39;49m[30;43m.[39;49m[30;43monline_enabled[39;49m[30;43m,[39;49m
+[32m    337[39m [30;43m        [39;49m[30;43mstorage[39;49m[30;43m,[39;49m
+[32m    338[39m [30;43m        [39;49m[30;43moffline_write_options[39;49m[30;43m,[39;49m
+[32m    339[39m [30;43m        [39;49m[30;43monline_write_options[39;49m[30;43m,[39;49m
+[32m    340[39m [30;43m    [39;49m[30;43m)[39;49m,
+[32m    341[39m     ge_report,
+[32m    342[39m )
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/engine/python.py:150[39m, in [36mEngine._sql[39m[34m(self, sql_query, feature_store, online_conn, dataframe_type, read_options, schema)[39m
-[32m    140[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m_sql[39m(
-[32m    141[39m     [38;5;28mself[39m,
-[32m    142[39m     sql_query: [38;5;28mstr[39m,
-[32m   (...)[39m[32m    147[39m     schema: [38;5;28mlist[39m[feature.Feature] | [38;5;28;01mNone[39;00m = [38;5;28;01mNone[39;00m,
-[32m    148[39m ) -> pd.DataFrame | pl.DataFrame:
-[32m    149[39m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m online_conn:
-[32m--> [39m[32m150[39m         [38;5;28;01mreturn[39;00m [30;43mself[39;49m[30;43m.[39;49m[30;43m_sql_offline[39;49m[30;43m([39;49m
-[32m    151[39m [30;43m            [39;49m[30;43msql_query[39;49m[30;43m,[39;49m
-[32m    152[39m [30;43m            [39;49m[30;43mdataframe_type[39;49m[30;43m,[39;49m
-[32m    153[39m [30;43m            [39;49m[30;43mschema[39;49m[30;43m,[39;49m
-[32m    154[39m [30;43m            [39;49m[30;43marrow_flight_config[39;49m[30;43m=[39;49m[30;43m([39;49m
-[32m    155[39m [30;43m                [39;49m[30;43mread_options[39;49m[30;43m.[39;49m[30;43mget[39;49m[30;43m([39;49m[30;43m"[39;49m[30;43marrow_flight_config[39;49m[30;43m"[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m{[39;49m[30;43m}[39;49m[30;43m)[39;49m[30;43m [39;49m[30;43;01mif[39;49;00m[30;43m [39;49m[30;43mread_options[39;49m[30;43m [39;49m[30;43;01melse[39;49;00m[30;43m [39;49m[30;43m{[39;49m[30;43m}[39;49m
-[32m    156[39m [30;43m            [39;49m[30;43m)[39;49m[30;43m,[39;49m
-[32m    157[39m [30;43m        [39;49m[30;43m)[39;49m
-[32m    158[39m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m._jdbc(sql_query, online_conn, dataframe_type, read_options, schema)
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/engine/python.py:1098[39m, in [36mEngine._save_dataframe[39m[34m(self, feature_group, dataframe, operation, online_enabled, storage, offline_write_options, online_write_options, validation_id)[39m
+[32m   1082[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m_save_dataframe[39m(
+[32m   1083[39m     [38;5;28mself[39m,
+[32m   1084[39m     feature_group: FeatureGroup,
+[32m   (...)[39m[32m   1091[39m     validation_id: [38;5;28mint[39m | [38;5;28;01mNone[39;00m = [38;5;28;01mNone[39;00m,
+[32m   1092[39m ) -> job.Job | [38;5;28;01mNone[39;00m:
+[32m   1093[39m     [38;5;28;01mif[39;00m (
+[32m   1094[39m         [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(feature_group, fg_mod.ExternalFeatureGroup)
+[32m   1095[39m         [38;5;129;01mand[39;00m feature_group.stream
+[32m   1096[39m     ):
+[32m   1097[39m         [38;5;66;03m# Streaming feature groups require the same data to be written on online and offline storage[39;00m
+[32m-> [39m[32m1098[39m         [38;5;28;01mreturn[39;00m [30;43mself[39;49m[30;43m.[39;49m[30;43m_run_materialization_job[39;49m[30;43m([39;49m
+[32m   1099[39m [30;43m            [39;49m[30;43mfeature_group[39;49m[30;43m,[39;49m
+[32m   1100[39m [30;43m            [39;49m[30;43mdataframe[39;49m[30;43m,[39;49m
+[32m   1101[39m [30;43m            [39;49m[30;43moffline_write_options[39;49m[30;43m,[39;49m
+[32m   1102[39m [30;43m            [39;49m[30;43;01mNone[39;49;00m[30;43m,[39;49m[30;43m  [39;49m[30;43;03m# doesnt support storage parameter[39;49;00m
+[32m   1103[39m [30;43m        [39;49m[30;43m)[39;49m
+[32m   1105[39m     inserted = [38;5;28;01mFalse[39;00m
+[32m   1106[39m     [38;5;28;01mif[39;00m (
+[32m   1107[39m         storage [38;5;129;01min[39;00m [[38;5;28;01mNone[39;00m, [33m"[39m[33moffline[39m[33m"[39m]
+[32m   1108[39m         [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(feature_group, fg_mod.ExternalFeatureGroup)
+[32m   1109[39m         [38;5;129;01mand[39;00m feature_group.time_travel_format == [33m"[39m[33mDELTA[39m[33m"[39m
+[32m   1110[39m     ):
+[32m   1111[39m         [38;5;66;03m# ExternalFeatureGroups have no offline storage, so offline writes are skipped.[39;00m
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/engine/python.py:300[39m, in [36mEngine._sql_offline[39m[34m(self, sql_query, dataframe_type, schema, arrow_flight_config)[39m
-[32m    297[39m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(sql_query, FsQuery):
-[32m    298[39m     [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mhsfs[39;00m[34;01m.[39;00m[34;01mcore[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m arrow_flight_client
-[32m--> [39m[32m300[39m     result_df = [30;43mutil[39;49m[30;43m.[39;49m[30;43m_run_with_loading_animation[39;49m[30;43m([39;49m
-[32m    301[39m [30;43m        [39;49m[30;43m"[39;49m[30;43mReading data from Hopsworks, using Hopsworks Feature Query Service[39;49m[30;43m"[39;49m[30;43m,[39;49m
-[32m    302[39m [30;43m        [39;49m[30;43marrow_flight_client[39;49m[30;43m.[39;49m[30;43m_get_instance[39;49m[30;43m([39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43m_read_query[39;49m[30;43m,[39;49m
-[32m    303[39m [30;43m        [39;49m[30;43msql_query[39;49m[30;43m,[39;49m
-[32m    304[39m [30;43m        [39;49m[30;43marrow_flight_config[39;49m[30;43m [39;49m[30;43;01mor[39;49;00m[30;43m [39;49m[30;43m{[39;49m[30;43m}[39;49m[30;43m,[39;49m
-[32m    305[39m [30;43m        [39;49m[30;43mdataframe_type[39;49m[30;43m,[39;49m
-[32m    306[39m [30;43m    [39;49m[30;43m)[39;49m
-[32m    307[39m [38;5;28;01melse[39;00m:
-[32m    308[39m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
-[32m    309[39m         [33m"[39m[33mReading data with Hive is not supported when using hopsworks client version >= 4.0[39m[33m"[39m
-[32m    310[39m     )
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/engine/python.py:2001[39m, in [36mEngine._run_materialization_job[39m[34m(self, feature_group, dataframe, offline_write_options, storage)[39m
+[32m   1999[39m         initial_check_point = [33m"[39m[33m"[39m
+[32m   2000[39m     [38;5;66;03m# provide the initial_check_point as it will reduce the read amplification of materialization job[39;00m
+[32m-> [39m[32m2001[39m     [30;43mfeature_group[39;49m[30;43m.[39;49m[30;43mmaterialization_job[39;49m[30;43m.[39;49m[30;43mrun[39;49m[30;43m([39;49m
+[32m   2002[39m [30;43m        [39;49m[30;43margs[39;49m[30;43m=[39;49m[30;43mfeature_group[39;49m[30;43m.[39;49m[30;43mmaterialization_job[39;49m[30;43m.[39;49m[30;43mconfig[39;49m[30;43m.[39;49m[30;43mget[39;49m[30;43m([39;49m[30;43m"[39;49m[30;43mdefaultArgs[39;49m[30;43m"[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m"[39;49m[30;43m"[39;49m[30;43m)[39;49m
+[32m   2003[39m [30;43m        [39;49m[30;43m+[39;49m[30;43m [39;49m[30;43m([39;49m
+[32m   2004[39m [30;43m            [39;49m[30;43mf[39;49m[30;43m"[39;49m[30;43m -initialCheckPointString [39;49m[30;43;01m{[39;49;00m[30;43minitial_check_point[39;49m[30;43;01m}[39;49;00m[30;43m"[39;49m
+[32m   2005[39m [30;43m            [39;49m[30;43;01mif[39;49;00m[30;43m [39;49m[30;43minitial_check_point[39;49m
+[32m   2006[39m [30;43m            [39;49m[30;43;01melse[39;49;00m[30;43m [39;49m[30;43m"[39;49m[30;43m"[39;49m
+[32m   2007[39m [30;43m        [39;49m[30;43m)[39;49m[30;43m,[39;49m
+[32m   2008[39m [30;43m        [39;49m[30;43mawait_termination[39;49m[30;43m=[39;49m[30;43moffline_write_options[39;49m[30;43m.[39;49m[30;43mget[39;49m[30;43m([39;49m[30;43m"[39;49m[30;43mwait_for_job[39;49m[30;43m"[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43;01mFalse[39;49;00m[30;43m)[39;49m[30;43m,[39;49m
+[32m   2009[39m [30;43m    [39;49m[30;43m)[39;49m
+[32m   2011[39m [38;5;28;01mreturn[39;00m feature_group.materialization_job
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hopsworks_common/util.py:430[39m, in [36m_run_with_loading_animation[39m[34m(message, func, *args, **kwargs)[39m
-[32m    427[39m end = [38;5;28;01mNone[39;00m
-[32m    429[39m [38;5;28;01mtry[39;00m:
-[32m--> [39m[32m430[39m     result = [30;43mfunc[39;49m[30;43m([39;49m[30;43m*[39;49m[30;43margs[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mkwargs[39;49m[30;43m)[39;49m
-[32m    431[39m     end = time.time()
-[32m    432[39m     [38;5;28;01mreturn[39;00m result
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hopsworks_common/job.py:274[39m, in [36mJob.run[39m[34m(self, args, await_termination, start_time, end_time, logical_date, env_vars)[39m
+[32m    270[39m     [38;5;28mprint[39m(
+[32m    271[39m         [33mf[39m[33m"[39m[33mJob started successfully, you can follow the progress at [39m[38;5;130;01m\n[39;00m[38;5;132;01m{[39;00mexecution.get_url()[38;5;132;01m}[39;00m[33m"[39m
+[32m    272[39m     )
+[32m    273[39m     [38;5;28;01mif[39;00m await_termination:
+[32m--> [39m[32m274[39m         [38;5;28;01mreturn[39;00m [30;43mself[39;49m[30;43m.[39;49m[30;43m_execution_engine[39;49m[30;43m.[39;49m[30;43m_wait_until_finished[39;49m[30;43m([39;49m[30;43mself[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mexecution[39;49m[30;43m)[39;49m
+[32m    275[39m [38;5;28;01mreturn[39;00m execution
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hsfs/core/arrow_flight_client.py:438[39m, in [36mArrowFlightClient._handle_afs_exception.<locals>.decorator.<locals>.afs_error_handler_wrapper[39m[34m(instance, *args, **kw)[39m
-[32m    436[39m _logger.debug([33m"[39m[33mCaught exception in [39m[38;5;132;01m%s[39;00m[33m: [39m[38;5;132;01m%s[39;00m[33m"[39m, func.[34m__name__[39m, message)
-[32m    437[39m _logger.exception(e)
-[32m--> [39m[32m438[39m [38;5;28;01mif[39;00m [30;43minstance[39;49m[30;43m.[39;49m[30;43m_server_version[39;49m [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m (
-[32m    439[39m     [38;5;28misinstance[39m(e, FlightServerError)
-[32m    440[39m     [38;5;129;01mand[39;00m [33m"[39m[33mPlease register client certificates first.[39m[33m"[39m [38;5;129;01min[39;00m message
-[32m    441[39m ):
-[32m    442[39m     instance._register_certificates()
-[32m    443[39m     [38;5;28;01mreturn[39;00m func(instance, *args, **kw)
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/hopsworks_common/engine/execution_engine.py:229[39m, in [36mExecutionEngine._wait_until_finished[39m[34m(self, job, execution, timeout)[39m
+[32m    227[39m     [38;5;28;01mraise[39;00m JobExecutionException([33m"[39m[33mThe Hopsworks Job was stopped[39m[33m"[39m)
+[32m    228[39m [38;5;28;01mif[39;00m status == [33m"[39m[33mFAILED[39m[33m"[39m:
+[32m--> [39m[32m229[39m     [38;5;28;01mraise[39;00m JobExecutionException(
+[32m    230[39m         [33m"[39m[33mThe Hopsworks Job failed, use the Hopsworks UI to access the job logs[39m[33m"[39m
+[32m    231[39m     )
+[32m    232[39m [38;5;28;01mif[39;00m status == [33m"[39m[33mFRAMEWORK_FAILURE[39m[33m"[39m:
+[32m    233[39m     [38;5;28;01mraise[39;00m JobExecutionException(
+[32m    234[39m         [33m"[39m[33mThe Hopsworks Job monitoring failed, could not determine the final status[39m[33m"[39m
+[32m    235[39m     )
 
-[31mAttributeError[39m: 'ArrowFlightClient' object has no attribute '_server_version'
-2026-07-14 14:21:25,787 INFO: Closing external client and cleaning up certificates.
-2026-07-14 14:21:25,787 INFO: Connection closed.
+[31mJobExecutionException[39m: The Hopsworks Job failed, use the Hopsworks UI to access the job logs
+2026-07-15 14:20:06,266 INFO: Closing external client and cleaning up certificates.
+2026-07-15 14:20:06,267 INFO: Connection closed.
 === RUNNING BATCH INFERENCE ===
 /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3056: UserWarning: Unknown failure executing file: </home/runner/work/Air-Quality-Prediction-Service-Madrid/Air-Quality-Prediction-Service-Madrid/notebooks/4_air_quality_batch_inference.ipynb>
   warn('Unknown failure executing file: <%s>' % fname)
