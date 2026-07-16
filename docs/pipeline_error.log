@@ -1,9 +1,9 @@
 === RUNNING FEATURE PIPELINE ===
-2026-07-15 14:16:36,838 INFO: Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: In FT2Font: Can not load face (unknown file format; error code 0x2)
-2026-07-15 14:16:37,524 INFO: generated new fontManager
-2026-07-15 14:16:38,059 INFO: Initializing external client
-2026-07-15 14:16:38,059 INFO: Base URL: https://eu-west.cloud.hopsworks.ai:443
-2026-07-15 14:16:39,987 INFO: Python Engine initialized.
+2026-07-16 14:29:02,243 INFO: Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: In FT2Font: Can not load face (unknown file format; error code 0x2)
+2026-07-16 14:29:02,291 INFO: generated new fontManager
+2026-07-16 14:29:02,767 INFO: Initializing external client
+2026-07-16 14:29:02,767 INFO: Base URL: https://eu-west.cloud.hopsworks.ai:443
+2026-07-16 14:29:04,613 INFO: Python Engine initialized.
 Local environment
 Added the following directory to the PYTHONPATH: /home/runner/work/Air-Quality-Prediction-Service-Madrid/Air-Quality-Prediction-Service-Madrid
 HopsworksSettings initialized!
@@ -76,13 +76,13 @@ Data columns (total 12 columns):
  11  street                       49 non-null     object        
 dtypes: datetime64[ns](1), float32(7), object(4)
 memory usage: 3.6+ KB
-Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Finished: Reading data from Hopsworks, using Hopsworks Feature Query Service (2.52s) 
+Reading data from Hopsworks, using Hopsworks Feature Query Service.   Reading data from Hopsworks, using Hopsworks Feature Query Service..   Reading data from Hopsworks, using Hopsworks Feature Query Service...   Reading data from Hopsworks, using Hopsworks Feature Query Service   Reading data from Hopsworks, using Hopsworks Feature Query Service.   Finished: Reading data from Hopsworks, using Hopsworks Feature Query Service (2.28s) 
 Uploading Dataframe: 0.00% |          | Rows 0/7 | Elapsed Time: 00:00 | Remaining Time: ?Uploading Dataframe: 100.00% |██████████| Rows 7/7 | Elapsed Time: 00:00 | Remaining Time: 00:00
-2026-07-15 14:17:10,394 INFO: Waiting for execution to finish. Current state: SUBMITTED. Final status: UNDEFINED
-2026-07-15 14:17:13,998 INFO: Waiting for execution to finish. Current state: RUNNING. Final status: UNDEFINED
-2026-07-15 14:19:51,990 INFO: Waiting for execution to finish. Current state: AGGREGATING_LOGS. Final status: FAILED
-2026-07-15 14:19:52,177 INFO: Waiting for log aggregation to finish.
-2026-07-15 14:20:05,357 ERROR: Execution failed with status: FAILED. See the logs for more information.
+2026-07-16 14:29:34,460 INFO: Waiting for execution to finish. Current state: SUBMITTED. Final status: UNDEFINED
+2026-07-16 14:29:38,125 INFO: Waiting for execution to finish. Current state: RUNNING. Final status: UNDEFINED
+2026-07-16 14:32:03,189 INFO: Waiting for execution to finish. Current state: AGGREGATING_LOGS. Final status: FAILED
+2026-07-16 14:32:03,350 INFO: Waiting for log aggregation to finish.
+2026-07-16 14:32:16,154 ERROR: Execution failed with status: FAILED. See the logs for more information.
 Launching job: air_quality_madrid_1_offline_fg_materialization
 Job started successfully, you can follow the progress at 
 https://eu-west.cloud.hopsworks.ai:443/p/3209/jobs/named/air_quality_madrid_1_offline_fg_materialization/executions
@@ -189,8 +189,8 @@ https://eu-west.cloud.hopsworks.ai:443/p/3209/jobs/named/air_quality_madrid_1_of
 [32m    235[39m     )
 
 [31mJobExecutionException[39m: The Hopsworks Job failed, use the Hopsworks UI to access the job logs
-2026-07-15 14:20:06,266 INFO: Closing external client and cleaning up certificates.
-2026-07-15 14:20:06,267 INFO: Connection closed.
+2026-07-16 14:32:16,965 INFO: Closing external client and cleaning up certificates.
+2026-07-16 14:32:16,966 INFO: Connection closed.
 === RUNNING BATCH INFERENCE ===
 /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3056: UserWarning: Unknown failure executing file: </home/runner/work/Air-Quality-Prediction-Service-Madrid/Air-Quality-Prediction-Service-Madrid/notebooks/4_air_quality_batch_inference.ipynb>
   warn('Unknown failure executing file: <%s>' % fname)
