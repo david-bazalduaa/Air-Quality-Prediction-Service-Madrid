@@ -1,6 +1,6 @@
 === RUNNING FEATURE PIPELINE ===
-2026-11-13 19:54:46,504 INFO: Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: In FT2Font: Can not load face (unknown file format; error code 0x2)
-2026-11-13 19:54:46,999 INFO: generated new fontManager
+2026-11-14 18:20:41,662 INFO: Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: In FT2Font: Can not load face (unknown file format; error code 0x2)
+2026-11-14 18:20:41,720 INFO: generated new fontManager
 Local environment
 Added the following directory to the PYTHONPATH: /home/runner/work/Air-Quality-Prediction-Service-Madrid/Air-Quality-Prediction-Service-Madrid
 HopsworksSettings initialized!
